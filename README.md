@@ -27,7 +27,6 @@ All users can:
 - [ ] Filter searches based on requirements/compensation/other attributes
 - [ ] Search for resumes using keywords and locations
 
-
 ## Design Docs
 * [View Wireframes][views]
 * [DB schema][schema]
@@ -37,20 +36,26 @@ All users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
-I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2.
+### Phase 1: User Authentication, Simple Job Creation [Human] (~1 day)
+Implement account creation, allowing user to specify if they are a dog or
+human. Implement user authentication in Rails. Build Human side functionality.
+Humans should have a personal show page containing their own posted jobs and
+a link to post more jobs. Should be able to post jobs using a form, with title,
+description, and optional expire_date, salary, and url. Should be able to
+delete jobs. Jobs should be visible from the jobs index (which will later be
+discarded once search isimplemented).
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+### Phase 2: Simple Resume Creation [Dog] (~1 day)
+Build Dog side functionality. Dogs should have a personal show page
+containing their uploaded resumes. Page should have a link to create new
+resumes. Should be able to create resumes using a form, with name, email, and
+body. Alternatively allow for upload of resume as txt. Resumes can be set to
+private. Dogs should be able to delete resumes. Resumes should be visible from
+the resume index unless private (which will later be discarded when search is
+implemented). Both jobs and resume indices should be accessible from front page;
+no login is required to view them.
 
 [Details][phase-two]
 
