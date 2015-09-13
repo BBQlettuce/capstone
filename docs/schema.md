@@ -1,26 +1,30 @@
 # Schema Information
 
-## blogs
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
-title       | string    | not null
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, unique
+password_digest | string    | not null
+session_token   | string    | not null, unique
+human?          | boolean   | not null, true if human account
 
-## followings
+## resumes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
+dog_id      | integer   | not null, foreign key (references users)
+body        | text      | not null; either from direct upload or built from form
 
-## posts
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    |
+## jobs
+column name | data type    | details
+------------|--------------|-----------------------
+id          | integer      | not null, primary key
+human_id    | integer      | not null, foreign key (references users)
+title       | string       | not null
+description | text         | not null
+location    | text/integer | not null, some form of location declaration
+salary      | float        | optional
 
 ## tags
 column name | data type | details
@@ -28,18 +32,9 @@ column name | data type | details
 id          | integer   | not null, primary key
 label       | string    | not null, unique
 
-## taggings
+## jobtaggings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
+job_id      | integer   | not null, foreign key (references jobs)
 tag_id      | integer   | not null, foreign key (references tags)
-
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-email           | string    | not null, unique
-password_digest | string    | not null
-session_token   | string    | not null, unique
-

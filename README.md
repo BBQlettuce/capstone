@@ -1,24 +1,32 @@
-# Flux-capacitr
+# Indoge
 
-[Heroku link][heroku]
-
-[heroku]: http://flux-capacitr.herokuapp.com
+- heroku link TBD
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Clone of job-searching site Indeed; App for doges to search for hoomins
+and vice versa.
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+User functionality on two fronts, dogs and humans:
+Dogs can:
+- [ ] Create accounts
+- [ ] Create sessions
+- [ ] Upload resume
+- [ ] Create resume/profile using form
+- [ ] Set privacy settings on resumes
+- [ ] Save openings
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+Owners can:
+- [ ] Create accounts
+- [ ] Create sessions
+- [ ] Post openings for dogs / using URLs
+- [ ] Tag openings to facilitate searches
+- [ ] Receive applications
+
+All users can:
+- [ ] Search for openings based on keywords and locations
+- [ ] Filter searches based on requirements/compensation/other attributes
+- [ ] Search for resumes using keywords and locations
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -73,19 +81,15 @@ collections, but they will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
-- [ ] User avatars
-- [ ] Typeahead search bar
+- [ ] Let dogs save search query settings
+- [ ] Let dogs opt to receive automatic updates on owners
+- [ ] Advanced searches
+- [ ] Owner ratings/reviews
+- [ ] Directly email from page
+- [ ] Share links
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
