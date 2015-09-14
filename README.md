@@ -3,8 +3,8 @@
 - heroku link TBD
 
 ## Minimum Viable Product
-Clone of job-searching site Indeed; App for doges to search for hoomins
-and vice versa.
+Clone of job-searching site Indeed; App for doges to search for jobs from
+hoomins and vice versa.
 
 User functionality on two fronts, dogs and humans:
 Dogs can:
@@ -13,14 +13,13 @@ Dogs can:
 - [ ] Upload resume
 - [ ] Create resume/profile using form
 - [ ] Set privacy settings on resumes
-- [ ] Save openings
+- [ ] Save jobs
 
-Owners can:
+Humans can:
 - [ ] Create accounts
 - [ ] Create sessions
-- [ ] Post openings for dogs / using URLs
-- [ ] Tag openings to facilitate searches
-- [ ] Receive applications
+- [ ] Post jobs for dogs
+- [ ] Tag jobs to facilitate searches
 
 All users can:
 - [ ] Search for openings based on keywords and locations
@@ -59,42 +58,57 @@ no login is required to view them.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Search page and query (~1-2 days)
+Default root page to be the jobs search bar. Search takes text (will implement
+location later). The original site had results continue through links but I
+think this will be a good place to use Backbone to swap out the page's search
+results with the next 10 when clicking a 'Next page' button or link. Backbone
+search view will replace the old index. Each job item should be a subview
+containing title, human name, post date (created_at), description, and button
+to save. Saved jobs will appear in the dog's account show page, where they can
+be deleted.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Searching by tags (~1 day)
+Create tags and taggings tables and associations; taggings is a join table for
+jobs and tags. Build search result from jobs that have tags that include the
+text of the query.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+### Phase 5: Searching by text (~1-2 days)
+Extend search functionality to search for the body of the job description.
+Build search result from sql querying of the database. Once this is done for
+jobs it should be trivial to replicate the functionality for resumes.
 
 [Details][phase-five]
 
+### Phase 6: Searching by location (~1-2 days)
+Extend search functionality to use location. I plan to either use some sort of
+zip code or state mapping to add to the jobs table. Location searching should
+be usable without text searching.
+
+[Details][phase-six]
+
+### Phase 7: Filter sidebar (~2 days)
+Create the filter sidebar on the search results page. Allow users to filter job
+search results by salary, title, human name, tags, and other criteria that I
+may end up adding to the jobs table. Allow sorting by post date and expiration
+date.
+
+[Details][phase-seven]
+
 ### Bonus Features (TBD)
 - [ ] Let dogs save search query settings
-- [ ] Let dogs opt to receive automatic updates on owners
-- [ ] Advanced searches
 - [ ] Owner ratings/reviews
-- [ ] Directly email from page
-- [ ] Share links
+- [ ] Directly apply to jobs from page
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
