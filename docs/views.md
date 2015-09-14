@@ -1,22 +1,45 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Root page
+![root-page]
 
-## Feed Show (landing page)
-![feed-show]
+## New User / New Session
+![new-user-or-login]
 
-## Blog Show
-![blog-show]
+## Dog Show
+![dog-show]
 
-## Post Show
+## Resume Form (private to dog)
+![resume-form]
+
+## Resume Show (private to Dog)
 ![post-show]
 
-## Post Form
-![post-form]
+## Human Show
+![human-show]
 
-## Search Results
-![search-results]
+## Job Form (private to human)
+![job-form]
+
+## Job Show (private to human)
+![job-show]
+
+## Job Search
+![job-search]
+
+## Resume Search
+![resume-search]
+
+[root-page]:
+[new-user-or-login]:
+[dog-show]:
+[resume-form]:
+[resume-show]:
+[human-show]:
+[job-form]:
+[job-show]:
+[job-search]:
+[resume-search]:
 
 [new-session]: ./wireframes/new_session.png
 [feed-show]: ./wireframes/feed_show.png
