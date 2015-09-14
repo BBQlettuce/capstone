@@ -1,19 +1,19 @@
-# Phase 1: User Authentication, Simple Job Creation [Human]
+# Phase 1: Human User Authentication, Simple Job Creation 
 
 ## Rails
 ### Models
-* User
+* Human
 * Job
 
 ### Controllers
-* UsersController (create, new)
+* HumansController (create, new)
 * SessionsController (create, new, destroy)
 * JobsController (create, new, show, destroy, edit, update)
 * index - to be replaced
 
 ### Views
-* users/new.html.erb
-* session/new.html.erb
+* human/new.html.erb
+* human_session/new.html.erb
 * jobs/new.html.erb
 * jobs/edit.html.erb
 * jobs/index.html.erb

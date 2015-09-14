@@ -1,4 +1,4 @@
-# Phase 2: Simple Resume Creation [Dog]
+# Phase 2: Dog User Auth and Simple Resume Creation
 
 ## Rails
 ### Models

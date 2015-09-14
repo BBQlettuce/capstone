@@ -35,24 +35,23 @@ All users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Simple Job Creation [Human] (~1 day)
-Implement account creation, allowing user to specify if they are a dog or
-human. Implement user authentication in Rails. Build Human side functionality.
-Humans should have a personal show page containing their own posted jobs and
-a link to post more jobs. Should be able to post jobs using a form, with title,
+### Phase 1: Human User Authentication, Simple Job Creation (~1 day)
+Implement human-side account creation. Build Human side functionality. Humans
+should have a personal show page containing their own posted jobs and a link
+to post more jobs. Should be able to post jobs using a form, with title,
 description, and optional expire_date, salary, and url. Should be able to
 delete jobs. Jobs should be visible from the jobs index (which will later be
 discarded once search is implemented).
 
 [Details][phase-one]
 
-### Phase 2: Simple Resume Creation [Dog] (~1 day)
+### Phase 2: Dog User Auth and Simple Resume Creation (~1 day)
 Build Dog side functionality. Dogs should have a personal show page
-containing their uploaded resumes. Page should have a link to create new
-resumes. Should be able to create resumes using a form, with name, email, and
-body. Alternatively allow for upload of resume as txt. Resumes can be set to
-private. Dogs should be able to delete resumes. Resumes should be visible from
-the resume index unless private (which will later be discarded when search is
+containing their uploaded resume and saved jobs. Page should have a link to
+create a new resume or edit an existing one. Should be able to create resumes
+using a form, with name, email, and body. Resumes can be set to private. Dogs
+should be able to delete resumes. Resumes should be visible from the resume  
+index unless private (which will later be discarded when search is
 implemented). Both jobs and resume indices should be accessible from front
 page; no login is required to view them.
 

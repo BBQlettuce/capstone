@@ -13,7 +13,7 @@
 ![resume-form]
 
 ## Resume Show (private to Dog)
-![post-show]
+![resume-show]
 
 ## Human Show
 ![human-show]
@@ -21,29 +21,14 @@
 ## Job Form (private to human)
 ![job-form]
 
-## Job Show (private to human)
-![job-show]
-
-## Job Search
-![job-search]
-
 ## Resume Search
 ![resume-search]
 
-[root-page]:
-[new-user-or-login]:
-[dog-show]:
-[resume-form]:
-[resume-show]:
-[human-show]:
-[job-form]:
-[job-show]:
-[job-search]:
-[resume-search]:
-
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[root-page]: ./wireframes/root_page.jpg
+[new-user-or-login]: ./wireframes/login_signup.jpg
+[dog-show]: ./wireframes/dog_show.jpg
+[resume-form]: ./wireframes/resume_form.jpg
+[resume-show]: ./wireframes/resume_show.jpg
+[human-show]: ./wireframes/human_show.jpg
+[job-search]: ./wireframes/job_search.jpg
+[resume-search]: ./wireframes/resume_search.jpg
