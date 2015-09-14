@@ -2,10 +2,8 @@
 
 ## Rails
 ### Models
-
+* extend querying functionality for jobs
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
 
 ### Views
 
@@ -15,8 +13,6 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
+* filter sidebar as a subview of jobs/search
 
 ## Gems/Libraries
-

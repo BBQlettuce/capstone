@@ -1,29 +1,24 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Simple Resume Creation [Dog]
 
 ## Rails
 ### Models
+* Resume
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+* ResumesController (new, create, edit, show, update, destroy)
+* index - to be replaced
 
 ### Views
-* blogs/show.json.jbuilder
+* resumes/new.html.erb
+* resumes/edit.html.erb
+* resumes/show.html.erb
+* resumes/index.html.erb
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
 
 ### Collections
-* Blogs
-* Posts
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
 
 ## Gems/Libraries

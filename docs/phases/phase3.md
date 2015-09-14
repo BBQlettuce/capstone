@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Search page and query
 
 ## Rails
 ### Models
@@ -6,16 +6,20 @@
 ### Controllers
 
 ### Views
+* jbuilder for job
+* jbuilder for resume
 
 ## Backbone
 ### Models
+* Job
+* Resume
 
 ### Collections
+* Jobs
+* Resumes
 
 ### Views
-* PostForm
+* JobsIndex (composite)
+* JobsShow (subview)
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

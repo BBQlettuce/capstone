@@ -42,7 +42,7 @@ Humans should have a personal show page containing their own posted jobs and
 a link to post more jobs. Should be able to post jobs using a form, with title,
 description, and optional expire_date, salary, and url. Should be able to
 delete jobs. Jobs should be visible from the jobs index (which will later be
-discarded once search isimplemented).
+discarded once search is implemented).
 
 [Details][phase-one]
 
@@ -53,8 +53,8 @@ resumes. Should be able to create resumes using a form, with name, email, and
 body. Alternatively allow for upload of resume as txt. Resumes can be set to
 private. Dogs should be able to delete resumes. Resumes should be visible from
 the resume index unless private (which will later be discarded when search is
-implemented). Both jobs and resume indices should be accessible from front page;
-no login is required to view them.
+implemented). Both jobs and resume indices should be accessible from front
+page; no login is required to view them.
 
 [Details][phase-two]
 
@@ -75,21 +75,21 @@ Create tags and taggings tables and associations; taggings is a join table for
 jobs and tags. Build search result from jobs that have tags that include the
 text of the query.
 
-[Details][phase-four]
+[Details][phase-four-five-six]
 
 ### Phase 5: Searching by text (~1-2 days)
 Extend search functionality to search for the body of the job description.
 Build search result from sql querying of the database. Once this is done for
 jobs it should be trivial to replicate the functionality for resumes.
 
-[Details][phase-five]
+[Details][phase-four-five-six]
 
 ### Phase 6: Searching by location (~1-2 days)
 Extend search functionality to use location. I plan to either use some sort of
 zip code or state mapping to add to the jobs table. Location searching should
 be usable without text searching.
 
-[Details][phase-six]
+[Details][phase-four-five-six]
 
 ### Phase 7: Filter sidebar (~2 days)
 Create the filter sidebar on the search results page. Allow users to filter job
@@ -108,7 +108,5 @@ date.
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
-[phase-six]: ./docs/phases/phase6.md
+[phase-four-five-six]: ./docs/phases/phase456.md
 [phase-seven]: ./docs/phases/phase7.md
