@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'static_pages#main'
+
   resources :users, only: [:new, :create, :show]
 
   resources :jobs
