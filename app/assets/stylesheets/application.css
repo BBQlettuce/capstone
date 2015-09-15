@@ -27,6 +27,32 @@ html, body, h1, h2, ul, li {
   background: transparent;
 }
 
+.group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
 ul {
   list-style: none;
+}
+
+header {
+  width: 100%;
+}
+
+.header-tabs {
+  float: left;
+}
+
+.user-tab {
+  float: right;
+}
+
+#content {
+
+}
+
+body {
+  font-family: Arial;
 }
