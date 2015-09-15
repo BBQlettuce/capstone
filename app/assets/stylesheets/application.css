@@ -26,3 +26,7 @@ html, body, h1, h2, ul, li {
   box-sizing: inherit;
   background: transparent;
 }
+
+ul {
+  list-style: none;
+}
