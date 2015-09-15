@@ -8,10 +8,13 @@
   </div>
 
   <div class="user-tab">
+    <ul>
     <% if logged_in? %>
-      <a href="<%=user_url(current_user)%>"><%=current_user.name%></a>
+      <li><a href="<%=user_url(current_user)%>"><%=current_user.name%></a></li>
+      <li><%= button_to "Sign Out", session_url, method: :delete%></li>
     <% else %>
       <a href="<%=new_session_url%>">Sign In</a>
     <% end %>
+    </ul>
   </div>
 </header>
