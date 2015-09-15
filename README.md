@@ -1,6 +1,6 @@
 # Indoge
 
-- heroku link TBD
+- indoge.herokuapp.com
 
 ## Minimum Viable Product
 Clone of job-searching site Indeed; App for doges to search for jobs from
