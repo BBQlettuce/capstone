@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    if @user.is_hoomin
+      render :hoomin_show
+    else
+      render :doge_show
+    end
   end
 
   private

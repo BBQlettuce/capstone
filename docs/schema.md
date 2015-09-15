@@ -44,7 +44,7 @@ body        | text      | not null; either from direct upload or built from form
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
+hoomin_id   | integer   | not null, foreign key (references users)
 title       | string    | not null
 description | text      | not null
 location    | ???       | not null, some form of location declaration

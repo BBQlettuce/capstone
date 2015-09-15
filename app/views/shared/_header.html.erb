@@ -9,7 +9,7 @@
 
   <div class="user-tab">
     <% if logged_in? %>
-      <a href="#"><%=current_user.name%></a>
+      <a href="<%=user_url(current_user)%>"><%=current_user.name%></a>
     <% else %>
       <a href="<%=new_session_url%>">Sign In</a>
     <% end %>
