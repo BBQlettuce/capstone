@@ -4,29 +4,4 @@
 
 </ul>
 
-<form class="job-form" action="<%=jobs_url%>" method="post">
-  <%= render_auth_token %>
-  <label>Title
-    <input type="text" name="job[title]">
-  </label>
-  <br>
-
-  <label>Description
-    <textarea name="job[description]"></textarea>
-  </label>
-  <br>
-
-  <label>Salary
-    <input type="text" name="job[salary]">
-  </label>
-  <br>
-
-  <label>Expire Date
-    <input type="date" name="job[expire_date]">
-  </label>
-  <br>
-
-  <label>link
-    <input type="text" name="job[url]">
-  </label>
-</form>
+<a href="<%=new_job_url%>">Post a new Job!</a>

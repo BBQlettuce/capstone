@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
+  has_many :jobs,
+  class_name: "Job",
+  foreign_key: :hoomin_id,
+  primary_key: :id
+
   attr_reader :password
 
   def password=(password)

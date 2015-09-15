@@ -1,0 +1,10 @@
+<h1>All jobs right now, THIS IS ONLY TEMPORARY</h1>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      Title: <%=job.title%>
+      <br>
+      Description: <%= job.description %>
+    </li>
+  <% end %>
+</ul>

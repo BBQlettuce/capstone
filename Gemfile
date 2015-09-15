@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Backbone
+gem 'backbone-on-rails'
 # For passwords
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
