@@ -1,6 +1,6 @@
-Module Api
-  class ApiController < ApplicationController
-
-  end
-
-end
+# Module Api
+#   class ApiController < ApplicationController
+#
+#   end
+#
+# end
