@@ -8,6 +8,8 @@ email           | string    | not null, unique
 password_digest | string    | not null
 name            | string    | not null
 session_token   | string    | not null, unique
+location        | ???       | not null, some sort of location declaration
+resume_text     | text      | optional
 
 ## humans
 column name     | data type | details
@@ -18,13 +20,13 @@ password_digest | string    | not null
 name            | string    | not null
 session_token   | string    | not null, unique
 
-## resumes
+<!-- ## resumes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 dog_id      | integer   | not null, foreign key (references dogs)
 location    | ???       | not null, some sort of location declaration
-body        | text      | not null; either from direct upload or built from form
+body        | text      | not null; either from direct upload or built from form -->
 
 ## jobs
 column name | data type | details
