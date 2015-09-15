@@ -39,6 +39,7 @@ ul {
 
 header {
   width: 100%;
+  padding: 10px;
 }
 
 .header-tabs {
@@ -49,8 +50,15 @@ header {
   float: right;
 }
 
-#content {
+.tab-item {
+  float: left;
+  padding: 0 10px;
+}
 
+#content {
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
 }
 
 body {

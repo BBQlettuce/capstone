@@ -1,19 +1,25 @@
 <header class="group">
   <div class="header-tabs">
-    <ul>
-      <li><a href="<%=root_url%>">Find Jobs</a></li>
-      <li><a href="#">Find Resumes</a></li>
-      <li><a href="#">Hoomins / Post Jobs</a></li>
+    <ul class="group">
+      <li class="tab-item"><a href="<%=root_url%>">Find Jobs</a></li>
+      <li class="tab-item"><a href="#">Find Resumes</a></li>
+      <li class="tab-item"><a href="#">Hoomins / Post Jobs</a></li>
     </ul>
   </div>
 
   <div class="user-tab">
-    <ul>
+    <ul class="group">
     <% if logged_in? %>
-      <li><a href="<%=user_url(current_user)%>"><%=current_user.name%></a></li>
-      <li><%= button_to "Sign Out", session_url, method: :delete%></li>
+      <li class="tab-item">
+        <a href="<%=user_url(current_user)%>"><%=current_user.name%></a>
+      </li>
+      <li class="tab-item">
+        <%= button_to "Sign Out", session_url, method: :delete%>
+      </li>
     <% else %>
-      <a href="<%=new_session_url%>">Sign In</a>
+      <li class="tab-item">
+        <a href="<%=new_session_url%>">Sign In</a>
+      </li>
     <% end %>
     </ul>
   </div>
