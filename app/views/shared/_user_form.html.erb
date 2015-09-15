@@ -14,8 +14,13 @@
   <br>
 
   <% if type == :newuser %>
+  <label>Name:
+    <input type="text" value="<%= @user.name %>" name="user[name]">
+  </label>
+  <br>
+
   <label>Are you a hoomin?</label>
-  
+  <%= check_box_tag("user[is_hoomin]", "true", false) %>
   <% end %>
 
   <input type="submit" value="<%= button_text %>">

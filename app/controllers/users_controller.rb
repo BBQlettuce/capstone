@@ -9,10 +9,8 @@ class UsersController < ApplicationController
     if @user.save
       login_user(@user)
       redirect_to root_url
-      fail
     else
       render :new
-      fail
     end
   end
 
