@@ -1,10 +1,10 @@
 <% action = (type == :newuser) ? users_url : session_url %>
-<% button_text = (type == :newuser) ? "Sign Up" : "Log In" %>
+<% button_text = (type == :newuser) ? "Create Account" : "Sign In" %>
 
 <form action="<%= action %>" method="POST">
   <%= render_auth_token %>
-  <label>Username:
-    <input type="text" value="<%= @user.username %>" name="user[username]">
+  <label>Email:
+    <input type="text" value="<%= @user.email %>" name="user[email]">
   </label>
   <br>
 
@@ -12,6 +12,11 @@
     <input type="password" value="<%= @user.password %>" name="user[password]">
   </label>
   <br>
+
+  <% if type == :newuser %>
+  <label>Are you a hoomin?</label>
+  
+  <% end %>
 
   <input type="submit" value="<%= button_text %>">
 </form>

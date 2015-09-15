@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+    @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login_user!(@user)
-      redirect_to root
+      redirect_to root_url
     else
       @user = User.new
       render :new
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
-    redirect_to root
+    redirect_to root_url
   end
 
 end

@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20150915144721) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "name",            null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.boolean  "is_hoomin",       null: false
+    t.string   "email",                           null: false
+    t.string   "name",                            null: false
+    t.string   "password_digest",                 null: false
+    t.string   "session_token",                   null: false
+    t.boolean  "is_hoomin",       default: false, null: false
     t.text     "resume_text"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
