@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  validates :email, :password_digest, :name, :session_token, presence: true
+  validates :email, :password_digest, :name, :session_token, :is_hoomin presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
-  after_initialize: :ensure_session_token
+  after_initialize :ensure_session_token
 
   attr_reader :password
 

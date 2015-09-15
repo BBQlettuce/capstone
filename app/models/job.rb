@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  validates :title, :description, :hoomin_id, presence: true
+  validates :title, :description, :user_id, presence: true
 
-  belongs_to :hoomin
+  belongs_to :user
 end

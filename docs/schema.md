@@ -1,6 +1,18 @@
 # Schema Information
 
-## dogs
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+email           | string    | not null, unique
+password_digest | string    | not null
+name            | string    | not null
+session_token   | string    | not null, unique
+location        | ???       | not null, some sort of location declaration
+is_hoomin       | boolean   | not null
+resume_text     | text      | optional
+
+<!-- ## dogs
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -18,7 +30,7 @@ id              | integer   | not null, primary key
 email           | string    | not null, unique
 password_digest | string    | not null
 name            | string    | not null
-session_token   | string    | not null, unique
+session_token   | string    | not null, unique -->
 
 <!-- ## resumes
 column name | data type | details
@@ -32,7 +44,7 @@ body        | text      | not null; either from direct upload or built from form
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-human_id    | integer   | not null, foreign key (references humans)
+user_id     | integer   | not null, foreign key (references users)
 title       | string    | not null
 description | text      | not null
 location    | ???       | not null, some form of location declaration
@@ -44,7 +56,7 @@ url         | string    | optional
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-dog_id      | integer   | not null, foreign key (references users)
+doge_id     | integer   | not null, foreign key (references users)
 job_id      | integer   | not null, foreign key (references jobs)
 
 ## tags
