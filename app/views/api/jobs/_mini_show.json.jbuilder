@@ -1,1 +1,1 @@
-json.extract! job, :title, :description
+json.extract! job, :id, :title, :description
