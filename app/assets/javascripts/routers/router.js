@@ -36,7 +36,10 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   profile: function() {
-
+    var current_user = new Indoge.Models.CurrentUser();
+    current_user.fetch();
+    var view = new Indoge.Views.Profile({user: current_user});
+    this._swapView(view);
   },
 
   _swapView: function(newView) {
