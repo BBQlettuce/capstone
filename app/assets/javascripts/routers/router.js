@@ -6,7 +6,8 @@ Indoge.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "main",
-    "jobs": "jobsIndex"
+    "jobs": "jobsIndex",
+    "resumes": "resumesIndex"
   },
 
   main: function() {
@@ -18,6 +19,10 @@ Indoge.Routers.Router = Backbone.Router.extend({
     this.jobs.fetch({reset: true});
     var view = new Indoge.Views.JobsIndex({jobs: this.jobs});
     this._swapView(view);
+  },
+
+  resumesIndex: function() {
+    
   },
 
   _swapView: function(newView) {

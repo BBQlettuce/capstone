@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   foreign_key: :hoomin_id,
   primary_key: :id
 
+  has_one :resume,
+  class_name: "Resume",
+  foreign_key: :doge_id,
+  primary_key: :id
+
   attr_reader :password
 
   def password=(password)

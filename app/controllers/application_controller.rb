@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     current_user.is_hoomin
   end
 
+  def is_doge?
+    !current_user.is_hoomin
+  end
+
   def logged_in?
     !current_user.nil?
   end
