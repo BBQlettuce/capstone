@@ -1,5 +1,5 @@
 class Resume < ActiveRecord::Base
-  validates :hoomin_id, :text, presence: true
+  validates :doge_id, :text, presence: true
 
   belongs_to :doge,
   class_name: "User",

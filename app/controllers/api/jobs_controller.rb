@@ -1,10 +1,19 @@
 class Api::JobsController < ApplicationController
-  before_action :require_login, only: [:new, :create, :destroy]
+  before_action :require_login, only: [:create, :update, :destroy]
 
   # creating a job as the current user
   def create
-    @job = current_user.jobs.new(job_params)
+    @job = current_user.jobs.build(job_params)
     if @job.save
+      render json: @job
+    else
+      render json: @job.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @job = current_user.jobs.find(params[:id])
+    if @job.update(job_params)
       render json: @job
     else
       render json: @job.errors.full_messages, status: :unprocessable_entity

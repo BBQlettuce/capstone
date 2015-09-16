@@ -1,14 +1,30 @@
 class Api::ResumesController < ApplicationController
+  before_action :require_login, only: [:create, :destroy]
+
   def create
+    @resume = current_user.build_resume(resume_params);
+    if @resume.save
+      render json: @resume
+    else
+      render json: @resume.errors.full_messages, status: :unprocessable_entity
+  end
+
+  def update
+    @resume = Resume.find(params[:id])
+    if @resume.update(resume_params)
+      render json: @resume
+    else
+      render json: @resume.errors.full_messages, status: :unprocessable_entity
   end
 
   def destroy
-  end
-
-  def edit
+    @resume = Resume.find(params[:id])
+    @resume.try(:destroy)
+    render json: {}
   end
 
   def show
+    @resume = Resume.find(params[:id])
   end
 
   def index
