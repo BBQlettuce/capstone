@@ -8,7 +8,8 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "": "jobsLanding",
     "jobs": "jobsIndex",
     "resumes": "resumesLanding",
-    "resumesIndex": "resumesIndex"
+    "resumesIndex": "resumesIndex",
+    "profile": "profile"
   },
 
   jobsLanding: function() {
@@ -29,6 +30,10 @@ Indoge.Routers.Router = Backbone.Router.extend({
 
   resumesIndex: function() {
     this.resumes.fetch({reset: true})
+  },
+
+  profile: function() {
+
   },
 
   _swapView: function(newView) {

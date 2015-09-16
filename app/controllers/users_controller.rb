@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:show]
 
   def new
     @user = User.new
@@ -16,16 +15,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-    redirect_to root_url if @user != current_user
-
-    if @user.is_hoomin
-      render :hoomin_show
-    else
-      render :doge_show
-    end
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   redirect_to root_url if @user != current_user
+  #
+  #   if @user.is_hoomin
+  #     render :hoomin_show
+  #   else
+  #     render :doge_show
+  #   end
+  # end
 
   private
 

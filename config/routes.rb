@@ -8,6 +8,12 @@ Rails.application.routes.draw do
         get 'my'
       end
     end
+    resources :resumes, only: [:show, :index, :create, :destroy] do
+      collection do
+        get 'my'
+      end
+    end
+    resource :currentuser, only: [:show]
   end
 
   resources :users, only: [:new, :create, :show]

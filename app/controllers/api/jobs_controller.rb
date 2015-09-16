@@ -30,11 +30,13 @@ class Api::JobsController < ApplicationController
   # to show a single job
   def show
     @job = Job.find(params[:id])
+    render :show
   end
 
   # to show all jobs in index
   def index
     @jobs = Job.all
+    render :index
   end
 
   # to show the current user's jobs
