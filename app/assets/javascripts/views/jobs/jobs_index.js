@@ -1,11 +1,11 @@
 Indoge.Views.JobsIndex = Backbone.View.extend({
-  template: JST['jobs_index'],
+  template: JST['jobs/jobs_index'],
 
   className: "todo",
-  
+
   initialize: function(options) {
     this.jobs = options.jobs;
-    this.listenTo(this.jobs, "sync", this.render);
+    this.listenTo(this.jobs, "sync add remove", this.render);
   },
 
   render: function() {
