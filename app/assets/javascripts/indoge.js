@@ -6,7 +6,7 @@ window.Indoge = {
   initialize: function() {
     var jobs = new Indoge.Collections.Jobs();
     var resumes = new Indoge.Collections.Resumes();
-    new Indoge.Routers.Router({jobs: jobs});
+    new Indoge.Routers.Router({jobs: jobs, resumes: resumes});
     Backbone.history.start();
   }
 };

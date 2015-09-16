@@ -7,6 +7,7 @@ class Api::ResumesController < ApplicationController
       render json: @resume
     else
       render json: @resume.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -15,6 +16,7 @@ class Api::ResumesController < ApplicationController
       render json: @resume
     else
       render json: @resume.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -25,16 +27,22 @@ class Api::ResumesController < ApplicationController
 
   def show
     @resume = Resume.find(params[:id])
+    render :show
   end
 
   def index
+    @resumes = Resume.all
+    render :index
   end
 
   def my
+    @resume = current_user.resume
+    render :show
   end
 
   private
   def resume_params
     params.require(:resume).permit(:text)
   end
+
 end
