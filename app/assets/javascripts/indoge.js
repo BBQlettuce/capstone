@@ -4,7 +4,7 @@ window.Indoge = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var jobs = Indoge.Collections.Jobs()
+    var jobs = new Indoge.Collections.Jobs()
     new Indoge.Routers.Router({jobs: jobs});
     Backbone.history.start();
   }

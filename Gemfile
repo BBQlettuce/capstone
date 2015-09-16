@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'serialize_json-rails'
 # Backbone
 gem 'backbone-on-rails'
 # For passwords
