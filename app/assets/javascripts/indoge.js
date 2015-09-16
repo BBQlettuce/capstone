@@ -4,7 +4,8 @@ window.Indoge = {
   Views: {},
   Routers: {},
   initialize: function() {
-
+    new Indoge.Routers.Router();
+    Backbone.history.start();
   }
 };
 
