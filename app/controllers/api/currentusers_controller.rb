@@ -3,6 +3,6 @@ class Api::CurrentusersController < ApplicationController
 
   def show
     @c_user = current_user
-    render :show, is_hoomin?: is_hoomin?
+    render :show
   end
 end
