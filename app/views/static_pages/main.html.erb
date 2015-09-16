@@ -1,5 +1,9 @@
-<h1>INDOGE</h1>
-<%= render 'shared/search_bar' %>
-<% if !logged_in? %>
-  <a href="<%=new_session_url%>">Log In</a>
-<% end %>
+<div id="main">
+  <div id="content">
+    <h1>INDOGE</h1>
+    <%= render 'shared/search_bar' %>
+    <% if !logged_in? %>
+      <a href="<%=new_session_url%>">Log In</a>
+    <% end %>
+  </div>
+</div>

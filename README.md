@@ -16,9 +16,9 @@ Dogs can:
 - [ ] Save jobs
 
 Humans can:
-- [ ] Create accounts
-- [ ] Create sessions
-- [ ] Post jobs for dogs
+- [x] Create accounts
+- [x] Create sessions
+- [x] Post jobs for dogs
 - [ ] Tag jobs to facilitate searches
 
 All users can:

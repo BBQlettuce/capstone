@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       login!(@user)
       redirect_to root_url
     else
-      fail
       render :new
     end
   end
