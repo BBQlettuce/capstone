@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  validates :title, :description, :user_id, presence: true
+  validates :title, :description, :poster_id, presence: true
   validates :salary, numericality: true, allow_nil: true
 
   belongs_to :poster,
