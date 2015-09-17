@@ -1,3 +1,3 @@
 Indoge.Models.Resume = Backbone.Model.extend({
-  urlRoot: '/api/resumes'
+  urlRoot: "/api/resumes"
 })

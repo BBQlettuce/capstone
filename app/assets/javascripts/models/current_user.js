@@ -1,5 +1,5 @@
 Indoge.Models.CurrentUser = Backbone.Model.extend({
-  url: '/api/currentuser',
+  url: "/api/currentuser",
 
   parse: function(response) {
     if (response.posted_jobs) {

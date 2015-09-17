@@ -1,8 +1,8 @@
 Indoge.Views.JobNew = Backbone.View.extend({
-  template: JST['jobs/job_form'],
+  template: JST["jobs/job_form"],
 
   events: {
-    'submit form': 'submit'
+    "submit form": "submit"
   },
 
   initialize: function(options) {
@@ -24,7 +24,6 @@ Indoge.Views.JobNew = Backbone.View.extend({
     e.preventDefault();
     var data = $(e.currentTarget).serializeJSON();
     this.model.set(data);
-    debugger
     this.model.save({}, {
       success: function() {
         this.jobs.add(this.model);

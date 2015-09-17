@@ -1,7 +1,7 @@
 Indoge.Views.EmployerProfile = Backbone.View.extend({
-  template: JST['profiles/employer_profile'],
+  template: JST["profiles/employer_profile"],
 
-  className: 'todo',
+  className: "todo",
 
   initialize: function(options) {
     this.user = options.user;

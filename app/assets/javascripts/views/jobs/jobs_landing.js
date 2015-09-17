@@ -1,5 +1,5 @@
 Indoge.Views.JobsLanding = Backbone.View.extend({
-  template: JST['jobs/jobs_landing'],
+  template: JST["jobs/jobs_landing"],
 
   className: "todo",
 
