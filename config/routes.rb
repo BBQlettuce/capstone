@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :jobs, only: [:show, :index, :create, :update, :destroy] do
       collection do
-        get 'my'
+        get 'my_posted'
       end
     end
     resources :resumes, only: [:show, :index, :create, :update, :destroy] do

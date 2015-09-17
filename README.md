@@ -10,7 +10,7 @@ Registered users can
 - [x] Create sessions
 - [ ] Upload resume
 - [x] Create resume/profile using form
-- [ ] Set privacy settings on resumes
+- [x] Set privacy settings on resumes
 - [ ] Save jobs
 - [x] Post jobs
 - [ ] Tag jobs to facilitate searches
