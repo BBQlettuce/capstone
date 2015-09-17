@@ -1,16 +1,25 @@
-Indoge.Views.JobsIndex = Backbone.View.extend({
+Indoge.Views.JobsIndex = Backbone.CompositeView.extend({
   template: JST["jobs/jobs_index"],
 
   className: "todo",
 
   initialize: function(options) {
     this.jobs = options.jobs;
-    this.listenTo(this.jobs, "sync add remove", this.render);
+    this.listenTo(this.jobs, "sync remove", this.render);
+    this.listenTo(this.jobs, "add", this.addJobView);
+
+    this.jobs.each(this.addJobView.bind(this));
   },
 
   render: function() {
     this.$el.html(this.template({jobs: this.jobs}));
+    this.attachSubviews();
     return this;
+  },
+
+  addJobView: function(job) {
+    var subview = new Indoge.Views.JobMiniShow({job: job});
+    this.addSubview(".jobs-list", subview);
   }
 
 })

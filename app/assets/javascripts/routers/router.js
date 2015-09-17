@@ -22,7 +22,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   jobsIndex: function() {
-    this.jobs.fetch({reset: true});
+    this.jobs.fetch();
     var view = new Indoge.Views.JobsIndex({jobs: this.jobs});
     this._swapView(view);
   },

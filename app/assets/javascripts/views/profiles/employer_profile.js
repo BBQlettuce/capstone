@@ -7,7 +7,7 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
     this.user = options.user;
     this.postedJobs = this.user.postedJobs();
     this.listenTo(this.user, "sync", this.render);
-    this.listenTo(this.postedJobs, "add", this.addPostedJobView)
+    this.listenTo(this.postedJobs, "add", this.addPostedJobView);
 
     this.postedJobs.each(this.addPostedJobView.bind(this));
   },
