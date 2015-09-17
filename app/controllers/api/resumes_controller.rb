@@ -31,7 +31,7 @@ class Api::ResumesController < ApplicationController
   end
 
   def index
-    @resumes = Resume.all
+    @resumes = Resume.where("private = false")
     render :index
   end
 
@@ -42,7 +42,7 @@ class Api::ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:text)
+    params.require(:resume).permit(:text, :private)
   end
 
 end

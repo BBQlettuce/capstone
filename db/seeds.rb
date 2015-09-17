@@ -11,6 +11,7 @@ u2 = User.create!(email: "doge@doge.com", name: "DHDoge", password: "password")
 u3 = User.create!(email: "expand@dong.com", name: "DK", password: "password")
 
 u1.posted_jobs.create!(title: "hunt ducks", description: "seeking a doge who can hunt ducks")
+u1.create_resume!(text: "my private resume of downthrow upair", private: true)
 u2.create_resume!(text: "25 years of experience hunting ducks")
 u3.posted_jobs.create!(title: "expand", description: "ding dong")
 u3.create_resume!(text: "he's bigger, faster, and stronger too")

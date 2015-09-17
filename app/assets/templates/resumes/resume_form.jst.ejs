@@ -2,5 +2,7 @@
 <form>
   <input type="hidden" name="user_id" value="<%=user.id%>">
   <textarea name="text"><%=user.resume().escape('text')%></textarea>
+  <label>Set resume to private?</label>
+  <input type="checkbox" name="private" value="true">
   <input type="submit" value="Save">
 </form>
