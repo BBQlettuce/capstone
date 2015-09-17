@@ -15,9 +15,8 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     return this;
   },
 
-  saveResume: function() {
+  saveResume: function(e) {
     e.preventDefault();
-    debugger
     var data = $(e.currentTarget).serializeJSON();
     this.user.resume().set(data);
     this.user.resume().save({}, {

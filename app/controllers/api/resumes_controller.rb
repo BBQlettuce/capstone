@@ -1,5 +1,5 @@
 class Api::ResumesController < ApplicationController
-  before_action :require_login, only: [:create, :destroy]
+  before_action :require_login, only: [:create, :update, :destroy]
 
   def create
     @resume = current_user.build_resume(resume_params);
