@@ -13,11 +13,11 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
     return response;
   },
 
-  jobs: function() {
-    if (!this._jobs) {
-      this._jobs = new Indoge.Collections.Jobs([]);
+  postedJobs: function() {
+    if (!this._postedJobs) {
+      this._postedJobs = new Indoge.Collections.Jobs([]);
     }
-    return this._jobs;
+    return this._postedJobs;
   },
 
   resume: function() {

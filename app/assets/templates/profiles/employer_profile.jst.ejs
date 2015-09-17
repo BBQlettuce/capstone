@@ -1,0 +1,13 @@
+<div class="posted-jobs">
+  <h2>Your posted jobs</h2>
+  <ul class="posted-jobs-list todo">
+    THESE WILL BE SUBVIEWS
+    <% user.postedJobs().each(function(job) { %>
+      <li>
+        <%= job.escape('title') %>: <%= job.escape('description') %>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+
+<a href="/#/jobsNew">Post a new job!</a>
