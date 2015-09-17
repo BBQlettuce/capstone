@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916175338) do
+ActiveRecord::Schema.define(version: 20150917135356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "jobs", force: :cascade do |t|
-    t.integer  "hoomin_id",   null: false
     t.string   "title",       null: false
     t.text     "description", null: false
     t.date     "expire_date"
@@ -25,27 +24,27 @@ ActiveRecord::Schema.define(version: 20150916175338) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id",     null: false
   end
 
-  add_index "jobs", ["hoomin_id"], name: "index_jobs_on_hoomin_id", using: :btree
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "resumes", force: :cascade do |t|
-    t.integer  "doge_id",    null: false
     t.text     "text",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id",    null: false
   end
 
-  add_index "resumes", ["doge_id"], name: "index_resumes_on_doge_id", using: :btree
+  add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                           null: false
-    t.string   "name",                            null: false
-    t.string   "password_digest",                 null: false
-    t.string   "session_token",                   null: false
-    t.boolean  "is_hoomin",       default: false, null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "email",           null: false
+    t.string   "name",            null: false
+    t.string   "password_digest", null: false
+    t.string   "session_token",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

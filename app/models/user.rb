@@ -1,18 +1,17 @@
 class User < ActiveRecord::Base
   validates :email, :password_digest, :name, :session_token, presence: true
-  validates :is_hoomin, inclusion: { in: [true, false] }
   validates :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
-  has_many :jobs, dependent: :destroy,
+  has_many :posted_jobs, dependent: :destroy,
   class_name: "Job",
-  foreign_key: :hoomin_id,
+  foreign_key: :user_id,
   primary_key: :id
 
   has_one :resume, dependent: :destroy,
   class_name: "Resume",
-  foreign_key: :doge_id,
+  foreign_key: :user_id,
   primary_key: :id
 
   attr_reader :password

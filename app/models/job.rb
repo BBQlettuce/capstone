@@ -1,9 +1,9 @@
 class Job < ActiveRecord::Base
-  validates :title, :description, :hoomin_id, presence: true
+  validates :title, :description, :user_id, presence: true
   validates :salary, numericality: true, allow_nil: true
 
-  belongs_to :hoomin,
+  belongs_to :user,
   class_name: "User",
-  foreign_key: :hoomin_id,
+  foreign_key: :user_id,
   primary_key: :id
 end

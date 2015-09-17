@@ -1,8 +1,8 @@
 class Resume < ActiveRecord::Base
-  validates :doge_id, :text, presence: true
+  validates :user_id, :text, presence: true
 
-  belongs_to :doge,
+  belongs_to :user,
   class_name: "User",
-  foreign_key: :doge_id,
+  foreign_key: :user_id,
   primary_key: :id
 end
