@@ -8,8 +8,8 @@ hoomins and vice versa.
 
 User functionality on two fronts, dogs and humans:
 Dogs can:
-- [ ] Create accounts
-- [ ] Create sessions
+- [x] Create accounts
+- [x] Create sessions
 - [ ] Upload resume
 - [ ] Create resume/profile using form
 - [ ] Set privacy settings on resumes
