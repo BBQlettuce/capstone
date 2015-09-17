@@ -1,1 +1,5 @@
 <%= job.escape('title') %>: <%= job.escape('description') %>
+<br>
+<% if (job.attributes.poster) { %>
+Posted by <%= job.attributes.poster.escape('name') %>
+<% } %>

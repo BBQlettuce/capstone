@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :posted_jobs, dependent: :destroy,
   class_name: "Job",
-  foreign_key: :user_id,
+  foreign_key: :poster_id,
   primary_key: :id
 
   has_one :resume, dependent: :destroy,
