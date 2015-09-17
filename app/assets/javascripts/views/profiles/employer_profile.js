@@ -1,6 +1,5 @@
-Indoge.Views.Profile = Backbone.View.extend({
-  hoomin_template: JST['profile/hoomin_profile'],
-  doge_template: JST['profile/doge_profile'],
+Indoge.Views.EmployerProfile = Backbone.View.extend({
+  template: JST['profiles/employer_profile'],
 
   className: 'todo',
 
@@ -10,7 +9,7 @@ Indoge.Views.Profile = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.hoomin_template());
+    this.$el.html(this.template());
     return this;
   }
 
