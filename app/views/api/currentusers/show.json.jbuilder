@@ -1,11 +1,9 @@
-json.extract! @c_user, :email, :name, :is_hoomin
+json.extract! @c_user, :email, :name
 
-if is_hoomin?
-  json.jobs do
-    json.array! @c_user.jobs do |job|
-      json.partial! 'api/jobs/mini_show', job: job
-    end
+json.resume @c_user.resume
+
+json.posted_jobs do
+  json.array! @c_user.posted_jobs do |p_job|
+    json.partial! 'api/jobs/mini_show', job: p_job
   end
-else
-  json.resume @c_user.resume
 end
