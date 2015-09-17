@@ -3,22 +3,16 @@
 - indoge.herokuapp.com
 
 ## Minimum Viable Product
-Clone of job-searching site Indeed; App for doges to search for jobs from
-hoomins and vice versa.
+Clone of job-searching site Indeed; App for doges to search for and post jobs.
 
-User functionality on two fronts, dogs and humans:
-Dogs can:
+Registered users can
 - [x] Create accounts
 - [x] Create sessions
 - [ ] Upload resume
 - [ ] Create resume/profile using form
 - [ ] Set privacy settings on resumes
 - [ ] Save jobs
-
-Humans can:
-- [x] Create accounts
-- [x] Create sessions
-- [x] Post jobs for dogs
+- [x] Post jobs
 - [ ] Tag jobs to facilitate searches
 
 All users can:
