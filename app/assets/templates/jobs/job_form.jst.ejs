@@ -1,0 +1,12 @@
+<form>
+  <input type="hidden" name="user_id" value="<%=user.id%>">
+
+  <label>Job Title</label>
+  <input type="text" name="title" value="<%job.escape('title')%>">
+  <br>
+  <label>Job Description</label>
+  <textarea name="description"></textarea>
+  <br>
+
+  <input type="submit" value="Submit">
+</form>

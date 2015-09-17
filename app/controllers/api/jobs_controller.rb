@@ -3,7 +3,7 @@ class Api::JobsController < ApplicationController
 
   # creating a job as the current user
   def create
-    @job = current_user.jobs.build(job_params)
+    @job = current_user.posted_jobs.build(job_params)
     if @job.save
       render json: @job
     else
@@ -12,7 +12,7 @@ class Api::JobsController < ApplicationController
   end
 
   def update
-    @job = current_user.jobs.find(params[:id])
+    @job = current_user.posted_jobs.find(params[:id])
     if @job.update(job_params)
       render json: @job
     else
@@ -22,7 +22,7 @@ class Api::JobsController < ApplicationController
 
   # destroy current job, only works if it's within current user's jobs
   def destroy
-    @job = current_user.jobs.find(params[:id])
+    @job = current_user.posted_jobs.find(params[:id])
     @job.try(:destroy)
     render json: {}
   end
@@ -40,8 +40,8 @@ class Api::JobsController < ApplicationController
   end
 
   # to show the current user's jobs
-  def my
-    @jobs = current_user.jobs
+  def my_posted
+    @jobs = current_user.posted_jobs
     render :index
   end
 

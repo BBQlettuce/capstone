@@ -2,9 +2,9 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
   url: '/api/currentuser',
 
   parse: function(response) {
-    if (response.jobs) {
-      this.jobs().set(response.jobs);
-      delete response.jobs;
+    if (response.posted_jobs) {
+      this.postedJobs().set(response.posted_jobs);
+      delete response.posted_jobs;
     }
     if (response.resume) {
       this.resume().set(response.resume);

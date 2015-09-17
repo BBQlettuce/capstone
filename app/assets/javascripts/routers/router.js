@@ -13,7 +13,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "myprofile": "employeeProfile",
     "hire": "employerProfile",
     "job/new": "jobNew",
-    "resume/new": "resumeNew"
+    "myresume": "resumeForm"
   },
 
   jobsLanding: function() {
@@ -52,19 +52,24 @@ Indoge.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  // jobNew: function() {
-  //   var current_user = new Indoge.Models.CurrentUser();
-  //   current_user.fetch();
-  //   var view = new Indoge.Views.JobNew({user: current_user, jobs: this.jobs});
-  //   this._swapView(view);
-  // },
-  //
-  // resumeNew: function() {
-  //   var current_user = new Indoge.Models.CurrentUser();
-  //   current_user.fetch();
-  //   var view = new Indoge.Views.ResumeNew({user: current_user});
-  //   this._swapView(view);
-  // },
+  jobNew: function() {
+    var current_user = new Indoge.Models.CurrentUser();
+    current_user.fetch();
+    var newJob = new Indoge.Models.Job();
+    var view = new Indoge.Views.JobNew({user: current_user, jobs: this.jobs, model: newJob});
+    this._swapView(view);
+  },
+
+  jobEdit: function() {
+
+  },
+  
+  resumeForm: function() {
+    var current_user = new Indoge.Models.CurrentUser();
+    current_user.fetch();
+    var view = new Indoge.Views.ResumeNew({user: current_user});
+    this._swapView(view);
+  },
 
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();

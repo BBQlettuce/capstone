@@ -1,4 +1,4 @@
-json.extract! @c_user, :email, :name
+json.extract! @c_user, :id, :email, :name
 
 json.resume @c_user.resume
 
