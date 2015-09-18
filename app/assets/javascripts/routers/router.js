@@ -8,6 +8,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "jobsLanding",
     "signin": "signin",
+    "signup": "signup",
     "jobs": "jobsIndex",
     "job/new": "jobNew",
     "job/:id": "jobShow",
@@ -24,6 +25,14 @@ Indoge.Routers.Router = Backbone.Router.extend({
       return;
     }
     var view = new Indoge.Views.SigninPage({callback: callback});
+    this._swapView(view);
+  },
+
+  signup: function() {
+    if (!this._requireSignedOut()) {
+      return;
+    };
+    var view = new Indoge.Views.SignupPage();
     this._swapView(view);
   },
 

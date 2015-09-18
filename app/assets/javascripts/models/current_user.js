@@ -14,6 +14,10 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
       this.resume().set(response.resume);
       delete response.resume;
     }
+    if (response.saved_jobs) {
+      this.savedJobs().set(response.saved_jobs);
+      delete response.saved_jobs;
+    }
     return response;
   },
 
@@ -29,6 +33,13 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
       this._resume = new Indoge.Models.Resume();
     }
     return this._resume;
+  },
+
+  savedJobs: function() {
+    if (!this._savedJobs) {
+      this._savedJobs = new Indoge.Collections.Jobs([]);
+    }
+    return this._savedJobs;
   },
 
   isSignedIn: function() {
