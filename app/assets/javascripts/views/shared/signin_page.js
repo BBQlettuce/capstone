@@ -17,6 +17,8 @@ Indoge.Views.SigninPage = Backbone.View.extend({
 
   signin: function(e) {
     e.preventDefault();
+    var data = $(e.currentTarget).serializeJSON();
+    
   },
 
   // if some action was specified, like going to employer profile, then do that

@@ -19,10 +19,14 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "myresume": "resumeForm"
   },
 
-  signin: function() {
-
+  signin: function(callback) {
+    if (!this._requireSignedOut(callback)) {
+      return;
+    }
+    var view = new Indoge.Views.SigninPage({callback: callback});
+    this._swapView(view);
   },
-  
+
   jobsLanding: function() {
     var view = new Indoge.Views.JobsLanding();
     this._swapView(view);
@@ -84,5 +88,28 @@ Indoge.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = newView;
     this.$rootEl.html(this._currentView.render().$el);
+  },
+
+  _requireSignedIn: function(callback) {
+    if (!Indoge.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      this.signIn(callback);
+      return false;
+    }
+    return true;
+  },
+
+  _requireSignedOut: function(callback) {
+    if (Indoge.currentUser.isSignedIn()) {
+      callback = callback || this._goHome.bind(this);
+      callback();
+      return false;
+    }
+    return true;
+  },
+
+  _goHome: function() {
+    Backbone.history.navigate("", { trigger: true });
   }
+
 })
