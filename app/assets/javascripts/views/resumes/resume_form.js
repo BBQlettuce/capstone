@@ -17,7 +17,6 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
 
   saveResume: function(e) {
     e.preventDefault();
-    debugger
     var data = $(e.currentTarget).serializeJSON();
     if (!data.private) {
       data.private = false;

@@ -11,12 +11,7 @@ Indoge.Views.JobNew = Backbone.View.extend({
 
     this.listenTo(this.user, "sync", this.render);
     this.listenTo(this.model, "sync", this.render);
-    // this.listenTo(this.model, "sync", this.redirect);
   },
-
-  // redirect: function() {
-  //   if (this.model.isNew())
-  // },
 
   render: function() {
     this.$el.empty();
