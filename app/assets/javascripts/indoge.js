@@ -6,10 +6,10 @@ window.Indoge = {
   initialize: function() {
     var jobs = new Indoge.Collections.Jobs();
     var resumes = new Indoge.Collections.Resumes();
+    this.header = new Indoge.Views.Header({el: "#header"});
     new Indoge.Routers.Router({
       jobs: jobs,
       resumes: resumes,
-      $header: $("#header"),
       $rootEl: $("#content")
     });
     Backbone.history.start();

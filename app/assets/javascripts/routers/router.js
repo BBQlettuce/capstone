@@ -2,10 +2,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.jobs = options.jobs;
     this.resumes = options.resumes;
-    this.$header = options.$header;
     this.$rootEl = options.$rootEl;
-    var header = new Indoge.Views.Header();
-    this.$header.html(header.render().$el);
   },
 
   routes: {
