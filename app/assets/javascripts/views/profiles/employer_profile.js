@@ -6,7 +6,9 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.user = options.user;
     this.postedJobs = this.user.postedJobs();
+
     this.listenTo(this.user, "sync", this.render);
+    this.listenTo(this.postedJobs, "remove", this.removePostedJobView);
     this.listenTo(this.postedJobs, "add", this.addPostedJobView);
 
     this.postedJobs.each(this.addPostedJobView.bind(this));
@@ -21,6 +23,10 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
   addPostedJobView: function(job) {
     var subview = new Indoge.Views.JobMiniShow({job: job});
     this.addSubview(".posted-jobs-list", subview)
+  },
+
+  removePostedJobView: function(job) {
+    this.removeModelSubview(".posted-jobs-list", job)
   }
 
 })
