@@ -13,7 +13,7 @@
   <%= job.escape('description') %>
 </div>
 
-<% if (Indoge.currentUser.isSignedIn()) { %>
+<% if (Indoge.currentUser.isSignedIn() && !!job.attributes.poster) { %>
   <% if (Indoge.currentUser.id !== job.attributes.poster.id) { %>
     <a href="#" class="save-link">save job</a>
   <% } else { %>
