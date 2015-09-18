@@ -58,7 +58,6 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
 
   signout: function(options) {
     var user = this;
-    debugger
     $.ajax({
       url: user.url,
       type: "DELETE",

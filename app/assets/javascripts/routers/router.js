@@ -50,24 +50,29 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   employeeProfile: function() {
-    var current_user = new Indoge.Models.CurrentUser();
-    current_user.fetch();
-    var view = new Indoge.Views.EmployeeProfile({user: current_user});
+    var callback = this.employeeProfile.bind(this);
+    if (!this._requireSignedIn(callback)) {
+      return;
+    };
+    Indoge.currentUser.fetch();
+    var view = new Indoge.Views.EmployeeProfile({user: Indoge.currentUser});
     this._swapView(view);
   },
 
   employerProfile: function() {
-    var current_user = new Indoge.Models.CurrentUser();
-    current_user.fetch();
-    var view = new Indoge.Views.EmployerProfile({user: current_user});
+    var callback = this.employerProfile.bind(this);
+    if (!this._requireSignedIn(callback)) {
+      return;
+    };
+    Indoge.currentUser.fetch();
+    var view = new Indoge.Views.EmployerProfile({user: Indoge.currentUser});
     this._swapView(view);
   },
 
   jobNew: function() {
-    var current_user = new Indoge.Models.CurrentUser();
-    current_user.fetch();
     var newJob = new Indoge.Models.Job();
-    var view = new Indoge.Views.JobNew({user: current_user, jobs: this.jobs, model: newJob});
+    Indoge.currentUser.fetch();
+    var view = new Indoge.Views.JobNew({user: Indoge.currentUser, jobs: this.jobs, model: newJob});
     this._swapView(view);
   },
 
@@ -78,9 +83,8 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   resumeForm: function() {
-    var current_user = new Indoge.Models.CurrentUser();
-    current_user.fetch();
-    var view = new Indoge.Views.ResumeForm({user: current_user});
+    Indoge.currentUser.fetch();
+    var view = new Indoge.Views.ResumeForm({user: Indoge.currentUser});
     this._swapView(view);
   },
 
@@ -93,7 +97,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   _requireSignedIn: function(callback) {
     if (!Indoge.currentUser.isSignedIn()) {
       callback = callback || this._goHome.bind(this);
-      this.signIn(callback);
+      this.signin(callback);
       return false;
     }
     return true;
