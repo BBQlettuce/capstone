@@ -15,12 +15,12 @@ class Api::SessionsController < ApplicationController
       head :unprocessable_entity
     else
       signin!(user)
-      redirect_to root_url
+      render :show
     end
   end
 
   def destroy
-    sign_out!
-    redirect_to root_url
+    signout!
+    render json: {}
   end
 end

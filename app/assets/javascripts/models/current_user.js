@@ -56,8 +56,18 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
     });
   },
 
-  signout: function() {
-
+  signout: function(options) {
+    var user = this;
+    debugger
+    $.ajax({
+      url: user.url,
+      type: "DELETE",
+      dataType: "json",
+      success: function() {
+        user.clear();
+        // options.success && options.success();
+      }
+    });
   },
 
   fireSessionEvent: function(){
