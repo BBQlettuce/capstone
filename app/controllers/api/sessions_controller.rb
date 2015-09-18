@@ -9,12 +9,12 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+    user = User.find_by_credentials(params[:user][:email], params[:user][:password])
 
     if user.nil?
       head :unprocessable_entity
     else
-      sign_in!(user)
+      signin!(user)
       redirect_to root_url
     end
   end

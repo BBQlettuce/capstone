@@ -1,6 +1,10 @@
 Indoge.Models.CurrentUser = Backbone.Model.extend({
   url: "/api/session",
 
+  initialize: function() {
+    this.listenTo(this, "change", this.fireSessionEvent);
+  },
+
   parse: function(response) {
     if (response.posted_jobs) {
       this.postedJobs().set(response.posted_jobs);
@@ -31,12 +35,39 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
     return !this.isNew();
   },
 
-  signin: function() {
-
+  signin: function(options) {
+    var user = this;
+    var credentials = {
+      "user[email]": options.email,
+      "user[password]": options.password
+    };
+    $.ajax({
+      url: user.url,
+      type: "POST",
+      data: credentials,
+      dataType: "json",
+      success: function(data) {
+        user.set(data);
+        options.success && options.success();
+      },
+      error: function() {
+        options.error && options.error();
+      }
+    });
   },
 
   signout: function() {
 
+  },
+
+  fireSessionEvent: function(){
+    if(this.isSignedIn()){
+      this.trigger("signin");
+      console.log("currentUser is signed in!", this);
+    } else {
+      this.trigger("signout");
+      console.log("currentUser is signed out!", this);
+    }
   }
 
 })
