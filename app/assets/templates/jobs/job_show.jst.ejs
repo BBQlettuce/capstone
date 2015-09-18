@@ -1,0 +1,22 @@
+<h2 class="job-title">
+  <a href="#">
+    <%=job.escape('title')%>
+  </a>
+</h2>
+
+<% if (job.attributes.poster) { %>
+  Posted by <%= job.attributes.poster.name %>
+  <br>
+<% } %>
+
+<div class="job-description">
+  <%= job.escape('description') %>
+</div>
+
+<% if (Indoge.currentUser.isSignedIn()) { %>
+  <% if (Indoge.currentUser.id !== job.attributes.poster.id) { %>
+    <a href="#" class="save-link">save job</a>
+  <% } else { %>
+    <a href="#" class="delete-job-link">delete job</a>
+  <% } %>
+<% } %>

@@ -18,10 +18,10 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
   end
 
-  resources :users, only: [:new, :create, :show]
+  # resources :users, only: [:new, :create, :show]
 
   # resources :jobs, only: [:new]
 
-  resource :session, only: [:new, :create, :destroy]
+  # resource :session, only: [:new, :create, :destroy]
 
 end

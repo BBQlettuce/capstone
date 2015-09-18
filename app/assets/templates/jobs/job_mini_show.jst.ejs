@@ -1,5 +1,5 @@
 <h2 class="job-title">
-  <a href="#">
+  <a href="/#/jobs/<%=job.id%>">
     <%=job.escape('title')%>
   </a>
 </h2>
@@ -13,6 +13,6 @@
   <%= job.escape('description') %>
 </div>
 
-<% if (Indoge.currentUser.isSignedIn()) { %>
+<% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
   <a href="#" class="save-link">save job</a>
 <% } %>
