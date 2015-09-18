@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
   has_many :job_saves,
   class_name: "Jobsave",
   foreign_key: :user_id,
-  primary_key: :id,
+  primary_key: :id
 
   has_many :saved_jobs,
   through: :job_saves,
   source: :job
-  
+
   has_one :resume, dependent: :destroy,
   class_name: "Resume",
   foreign_key: :user_id,
