@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       end
     end
     resource :currentuser, only: [:show]
+    resources :users, only: [:new, :create, :show]
+    resource :session, only: [:show, :create, :destroy]
   end
 
   resources :users, only: [:new, :create, :show]

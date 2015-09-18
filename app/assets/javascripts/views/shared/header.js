@@ -1,5 +1,5 @@
 Indoge.Views.Header = Backbone.View.extend({
-  template: JST["header"],
+  template: JST["shared/header"],
 
   initialize: function() {
     this.render();

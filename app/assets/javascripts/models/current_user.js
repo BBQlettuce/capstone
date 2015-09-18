@@ -1,5 +1,5 @@
 Indoge.Models.CurrentUser = Backbone.Model.extend({
-  url: "/api/currentuser",
+  url: "/api/session",
 
   parse: function(response) {
     if (response.posted_jobs) {
@@ -25,6 +25,18 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
       this._resume = new Indoge.Models.Resume();
     }
     return this._resume;
+  },
+
+  isLoggedIn: function() {
+    return !this.isNew();
+  },
+
+  login: function() {
+    
+  },
+
+  logout: function() {
+
   }
 
 })
