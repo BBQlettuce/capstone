@@ -5,3 +5,20 @@
     <li class="tab-item" id="emplink"><a href="/#/hire">Employer Doge? / Post Jobs</a></li>
   </ul>
 </div>
+
+<div class="user-tab">
+  <ul class="group">
+  <% if (Indoge.currentUser.isLoggedIn()) { %>
+    <li class="tab-item">
+      <a href="/#/myprofile"><%=Indoge.currentUser.escape('name')%></a>
+    </li>
+    <li class="tab-item">
+      <a href="#" id="signout-button">Sign Out</a>
+    </li>
+  <% } else { %>
+    <li class="tab-item">
+      <a href="/#/signin">Sign In</a>
+    </li>
+  <% } %>
+  </ul>
+</div>

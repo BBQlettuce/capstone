@@ -1,8 +1,9 @@
 Indoge.Views.LoginPage = Backbone.View.extend({
   template: JST["shared/login_page"],
 
-  initialize: function() {
-
+  initialize: function(options) {
+    this.callback = options.callback;
+    this.listenTo(Indoge.currentUser, "login", this.loginCallback);
   },
 
   events: {
@@ -16,5 +17,16 @@ Indoge.Views.LoginPage = Backbone.View.extend({
 
   login: function(e) {
     e.preventDefault();
+  },
+
+  // if some action was specified, like going to employer profile, then do that
+  // otherwise redirect to jobs_landing
+  loginCallback: function() {
+    if (this.callback) {
+      this.callback();
+    }
+    else {
+      Backbone.history.navigate("", {trigger: true});
+    }
   }
 })
