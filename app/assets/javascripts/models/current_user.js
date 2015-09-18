@@ -27,15 +27,15 @@ Indoge.Models.CurrentUser = Backbone.Model.extend({
     return this._resume;
   },
 
-  isLoggedIn: function() {
+  isSignedIn: function() {
     return !this.isNew();
   },
 
-  login: function() {
-    
+  signin: function() {
+
   },
 
-  logout: function() {
+  signout: function() {
 
   }
 

@@ -1,13 +1,13 @@
-Indoge.Views.LoginPage = Backbone.View.extend({
-  template: JST["shared/login_page"],
+Indoge.Views.SigninPage = Backbone.View.extend({
+  template: JST["shared/signin_page"],
 
   initialize: function(options) {
     this.callback = options.callback;
-    this.listenTo(Indoge.currentUser, "login", this.loginCallback);
+    this.listenTo(Indoge.currentUser, "signin", this.signinCallback);
   },
 
   events: {
-    "submit form": "login"
+    "submit form": "signin"
   },
 
   render: function() {
@@ -15,13 +15,13 @@ Indoge.Views.LoginPage = Backbone.View.extend({
     return this;
   },
 
-  login: function(e) {
+  signin: function(e) {
     e.preventDefault();
   },
 
   // if some action was specified, like going to employer profile, then do that
   // otherwise redirect to jobs_landing
-  loginCallback: function() {
+  signinCallback: function() {
     if (this.callback) {
       this.callback();
     }

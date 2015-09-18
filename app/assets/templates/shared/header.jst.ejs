@@ -8,7 +8,7 @@
 
 <div class="user-tab">
   <ul class="group">
-  <% if (Indoge.currentUser.isLoggedIn()) { %>
+  <% if (Indoge.currentUser.isSignedIn()) { %>
     <li class="tab-item">
       <a href="/#/myprofile"><%=Indoge.currentUser.escape('name')%></a>
     </li>

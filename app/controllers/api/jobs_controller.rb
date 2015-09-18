@@ -1,5 +1,5 @@
 class Api::JobsController < ApplicationController
-  before_action :require_login, only: [:create, :update, :destroy]
+  before_action :require_signin, only: [:create, :update, :destroy]
 
   # creating a job as the current user
   def create
