@@ -37,31 +37,13 @@ ul {
   list-style: none;
 }
 
-header {
-  width: 100%;
-  padding: 10px;
-}
-
-.header-tabs {
-  float: left;
-}
-
-.user-tab {
-  float: right;
-}
-
-.tab-item {
-  float: left;
-  padding: 0 10px;
-}
-
 #content {
-  width: 800px;
+  width: 700px;
   margin: 20px auto;
 }
 
 body {
-  font-family: Arial;
+  font-family: sans-serif;
 }
 
 .todo {

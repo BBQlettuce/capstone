@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+  font-size: 13px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-tabs {
+  float: left;
+}
+
+.user-tab {
+  float: right;
+}
+
+.tab-item {
+  float: left;
+  padding: 9px 12px;
+}
+
+a:link {
+  text-decoration: none;
+  color: #00c;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #00c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
