@@ -22,6 +22,19 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
 
   saveJob: function(e) {
     e.preventDefault();
+    var data = {
+      "jobsave[job_id]": this.job.id,
+      "jobsave[user_id]": Indoge.currentUser.id}
+    $.ajax({
+      url: "/api/jobsaves",
+      type: "POST",
+      dataType: "json",
+      data: data,
+      success: function() {
+        Indoge.currentUser.fetch();
+        console.log("job saved!");
+      }
+    })
   },
 
   unsaveJob: function(e) {
