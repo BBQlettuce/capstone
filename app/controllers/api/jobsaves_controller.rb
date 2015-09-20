@@ -14,7 +14,7 @@ class Api::JobsavesController < ApplicationController
     user_id = jobsave_params[:user_id]
     job_id = jobsave_params[:job_id]
     @jobsave = Jobsave.where("user_id = ? AND job_id = ?", user_id, job_id)
-    @jobsave.try(:destroy)
+    @jobsave.destroy_all
     render json: {}
   end
 

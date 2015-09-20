@@ -15,6 +15,8 @@
 
 <% if (job.attributes.poster) { %>
   <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
-    <a href="#" class="save-link">save job</a>
+    <% var linkClass = saved ? "unsave-link" : "save-link"; %>
+    <% var linkText = saved ? "unsave job" : "save job" %>
+    <a href="#" class="<%=linkClass%>"><%=linkText%></a>
   <% } %>
 <% } %>
