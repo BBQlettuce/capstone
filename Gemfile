@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'uuidtools'
+
 gem 'serialize_json-rails'
 # Backbone
 gem 'backbone-on-rails'

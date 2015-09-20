@@ -11,7 +11,7 @@ Registered users can
 - [ ] Upload resume
 - [x] Create resume/profile using form
 - [x] Set privacy settings on resumes
-- [ ] Save jobs
+- [x] Save jobs
 - [x] Post jobs
 - [ ] Tag jobs to facilitate searches
 
