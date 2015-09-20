@@ -13,9 +13,11 @@ Rails.application.routes.draw do
         get 'my'
       end
     end
-    resource :currentuser, only: [:show]
+    # resource :currentuser, only: [:show]
     resources :users, only: [:new, :create, :show]
     resource :session, only: [:show, :create, :destroy]
+
+    resource :jobsaves, only: [:create, :destroy]
   end
 
   # resources :users, only: [:new, :create, :show]

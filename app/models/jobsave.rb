@@ -1,5 +1,6 @@
 class Jobsave < ActiveRecord::Base
   validates :job_id, :user_id, presence: true
+  validates :job_id, uniqueness: {scope: :user_id}
 
   belongs_to :user,
   class_name: "User",

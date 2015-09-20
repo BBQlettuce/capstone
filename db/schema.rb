@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150918163122) do
+ActiveRecord::Schema.define(version: 20150920033642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150918163122) do
   end
 
   add_index "jobsaves", ["job_id"], name: "index_jobsaves_on_job_id", using: :btree
+  add_index "jobsaves", ["user_id", "job_id"], name: "index_jobsaves_on_user_id_and_job_id", unique: true, using: :btree
   add_index "jobsaves", ["user_id"], name: "index_jobsaves_on_user_id", using: :btree
 
   create_table "resumes", force: :cascade do |t|
