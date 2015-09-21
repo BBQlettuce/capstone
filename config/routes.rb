@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resource :jobsaves, only: [:create, :destroy]
   end
 
+  get "auth/:provider/callback", to: "api/sessions#omniauth"
   # resources :users, only: [:new, :create, :show]
 
   # resources :jobs, only: [:new]
