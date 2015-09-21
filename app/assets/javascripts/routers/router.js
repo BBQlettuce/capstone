@@ -13,7 +13,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "jobs/new": "jobNew",
     "jobs/:id": "jobShow",
     "resumes": "resumesLanding",
-    "resumes/index": "resumesIndex",
+    "resumes/search": "resumesIndex",
     "resumes/:id": "resumeShow",
     "myprofile": "employeeProfile",
     "hire": "employerProfile",
