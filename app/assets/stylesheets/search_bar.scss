@@ -51,7 +51,7 @@
 
 // things that are different if not on the front page:
 
-.search-page .logo {
+.content .logo {
   display: block;
   float: left;
   font-size: 40px;
@@ -60,14 +60,14 @@
   margin-top: 10px;
 }
 
-.search-page .top-label {
+.content .top-label {
   font-size: 14px;
 }
 
-.search-page .find-button {
+.content .find-button {
   margin-top: 0;
 }
 
-.search-page .search-bar {
+.content .search-bar {
   margin-bottom: 20px;
 }
