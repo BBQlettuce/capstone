@@ -1,6 +1,8 @@
 Indoge.Views.SignupPage = Backbone.View.extend({
   template: JST["shared/signup_page"],
 
+  className: "signup",
+  
   events: {
     "submit form": "signup"
   },

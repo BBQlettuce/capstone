@@ -1,0 +1,82 @@
+.signin {
+  margin-top: 20px;
+  margin-left: 140px;
+}
+
+.signin h1 {
+  font-size: 24px;
+  padding: 0 12px;
+}
+
+.signin h2 {
+  font-size: 14px;
+  padding: 0 12px;
+}
+
+.signin form {
+  margin-top: 5px;
+  border-top: 2px solid #3366cc;
+  width: 352px;
+  padding: 12px;
+  font-size: 14px;
+  background: #e0e5ff;
+}
+
+.signin form input {
+  border: 1px solid #cccccc;
+  background: white;
+  width: 338px;
+  height: 16px;
+  padding: 1px;
+  font-size: 12px;
+}
+
+.signin form button {
+  text-align: center;
+  padding: 2px 6px;
+  border: 1px solid #d0d0d0;
+  background: white;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.signup {
+  width: 356px;
+  margin: 20px auto;
+  background: #e8e8e8;
+  padding: 20px;
+}
+
+.signup h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.signup h2 {
+  color: #666;
+  font-size: 14px;
+}
+
+.signup input {
+  width: 336px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  background: white;
+  text-align: left;
+  padding: 6px 9px;
+  font-size: 16px;
+}
+
+.signup button {
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 1px solid #1841b7;
+  background: #2f5bd7;
+  border-radius: 5px;
+}
+
+.signup button:hover {
+  background: #5687f3;
+}

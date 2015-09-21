@@ -6,6 +6,8 @@ Indoge.Views.SigninPage = Backbone.View.extend({
     this.listenTo(Indoge.currentUser, "signin", this.signinCallback);
   },
 
+  className: "signin",
+  
   events: {
     "submit form": "signin"
   },

@@ -37,6 +37,10 @@ ul {
   list-style: none;
 }
 
+input:focus {
+  outline: solid #83bffc;
+}
+
 .logo {
   font-size: 60px;
   display: block;
