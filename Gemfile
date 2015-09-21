@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'figaro'
 gem 'uuidtools'
 
 gem 'serialize_json-rails'
