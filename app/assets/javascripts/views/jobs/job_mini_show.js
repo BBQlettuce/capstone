@@ -52,7 +52,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
       data: data,
       success: function() {
         Indoge.currentUser.fetch();
-        console.log("job saved!");
+        // console.log("job saved!");
       }
     })
   },
@@ -69,7 +69,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
       data: data,
       success: function() {
         Indoge.currentUser.fetch();
-        console.log("job unsaved!");
+        // console.log("job unsaved!");
       }
     })
   }

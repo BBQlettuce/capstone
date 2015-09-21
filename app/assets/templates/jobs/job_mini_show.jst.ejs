@@ -13,12 +13,12 @@
 </div>
 
 <span class="time-ago">
-  <%=timeAgo%> -
+  <%=timeAgo%>
 </span>
 <% if (job.attributes.poster) { %>
   <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
     <% var linkClass = saved ? "unsave-link" : "save-link"; %>
     <% var linkText = saved ? "unsave job" : "save job" %>
-    <a href="#" class="<%=linkClass%>"><%=linkText%></a>
+    - <a href="#" class="<%=linkClass%>"><%=linkText%></a>
   <% } %>
 <% } %>
