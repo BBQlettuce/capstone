@@ -1,14 +1,19 @@
-<div class="saved-jobs">
-  <h2>My saved jobs</h2>
-  <ul class="saved-jobs-list">
-
-  </ul>
+<div class="search-bar">
 </div>
 
-<div class="resume">
-  <h2>My resume</h2>
-  <br>
-  <a href="/#/myresume">Build my resume</a>
-  <br>
-  <%= user.resume().escape('text') %>
+<div class="main group">
+  <div class="saved-jobs">
+    <h2>My saved jobs</h2>
+    <ul class="saved-jobs-list">
+
+    </ul>
+  </div>
+
+  <div class="resume">
+    <h2>My resume</h2>
+    <br>
+    <a href="/#/myresume">Build my resume</a>
+    <br>
+    <%= user.resume().escape('text') %>
+  </div>
 </div>
