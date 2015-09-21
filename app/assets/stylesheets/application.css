@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, h1, h2, ul, li {
+html, body, h1, h2, ul, li, form, input, button {
   margin: 0;
   border: 0;
   padding: 0;
@@ -37,9 +37,17 @@ ul {
   list-style: none;
 }
 
-#content {
+.logo {
+  font-size: 60px;
+  display: block;
+  padding: 20px;
+  font-weight: bold;
+  color: #3366cc;
+}
+
+.landing {
   width: 700px;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 body {
