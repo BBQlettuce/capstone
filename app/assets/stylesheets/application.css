@@ -45,6 +45,9 @@ input:focus {
   font-size: 60px;
   display: block;
   padding: 20px;
+}
+
+.logo {
   font-weight: bold;
   color: #3366cc;
 }

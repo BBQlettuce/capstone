@@ -1,7 +1,7 @@
 Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
   template: JST["jobs/jobs_search"],
 
-  className: "content group",
+  className: "search-page group",
 
   initialize: function(options) {
     this.jobs = options.jobs;

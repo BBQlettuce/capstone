@@ -2,19 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content {
+.search-page {
   width: 900px;
   margin: 15px auto;
 }
 
-.sidebar {
+.main .sidebar {
   float: left;
   background: green;
   width: 180px;
   padding: 0 10px;
 }
 
-.main {
+.main .jobs-list {
   float: right;
   width: 700px;
 }
