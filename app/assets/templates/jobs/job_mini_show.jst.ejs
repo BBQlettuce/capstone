@@ -5,14 +5,16 @@
 </h2>
 
 <% if (job.attributes.poster) { %>
-  Posted by <%= job.attributes.poster.name %>
-  <br>
+  <h2 class="poster">Posted by <%= job.attributes.poster.name %></h2>
 <% } %>
 
 <div class="job-snippet">
   <%= job.escape('description') %>
 </div>
 
+<span class="time-ago">
+  <%=timeAgo%> -
+</span>
 <% if (job.attributes.poster) { %>
   <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
     <% var linkClass = saved ? "unsave-link" : "save-link"; %>

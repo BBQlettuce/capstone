@@ -19,9 +19,24 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
     var saved = Indoge.currentUser.savedJobs().some(function(job) {
       return job.attributes.id === this.job.id
     }.bind(this));
-    console.log(saved);
-    this.$el.html(this.template({job: this.job, saved: saved}));
+    // console.log(saved);
+    this.$el.html(this.template({job: this.job, saved: saved, timeAgo: this.timeAgo()}));
     return this;
+  },
+
+  timeAgo: function() {
+    var msAgo = Date.now() - Date.parse(this.job.attributes.created_at);
+    // first case 1 hr ago
+    if (msAgo <= 3600000) {
+      return "just now";
+    // if less than a day, post hours
+    } else if (msAgo <= 86400000) {
+      return (Math.floor(msAgo/3600000)) + " hours ago";
+    } else if (msAgo <= 172800000){
+      return "1 day ago";
+    } else {
+      return (Math.floor(msAgo/86400000)) + "days ago";
+    }
   },
 
   saveJob: function(e) {
