@@ -41,7 +41,7 @@ input:focus {
   outline: solid #83bffc;
 }
 
-.logo {
+.landing .logo {
   font-size: 60px;
   display: block;
   padding: 20px;

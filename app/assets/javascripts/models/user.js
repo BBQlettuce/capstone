@@ -91,10 +91,10 @@ Indoge.Models.CurrentUser = Indoge.Models.User.extend({
   fireSessionEvent: function(){
     if(this.isSignedIn()){
       this.trigger("signin");
-      console.log("currentUser is signed in!", this);
+      // console.log("currentUser is signed in!", this);
     } else {
       this.trigger("signout");
-      console.log("currentUser is signed out!", this);
+      // console.log("currentUser is signed out!", this);
     }
   }
 

@@ -1,3 +1,33 @@
 // Place all the styles related to the Jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+  width: 900px;
+  margin: 15px auto;
+}
+
+.sidebar {
+  float: left;
+  background: green;
+  width: 180px;
+  padding: 0 10px;
+}
+
+.main {
+  float: right;
+  width: 700px;
+}
+
+.job-tab {
+  border: 1px solid red;
+  padding: 9px;
+}
+
+.job-tab h2.job-title {
+  font-weight: bold;
+}
+
+.job-tab a.save-link, a.unsave-link {
+  color: #7777cc;
+}
