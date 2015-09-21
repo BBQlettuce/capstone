@@ -11,7 +11,6 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
     this.listenTo(this.postedJobs, "remove", this.removePostedJobView);
     this.listenTo(this.postedJobs, "add", this.addPostedJobView);
 
-    this.addSearchbar();
     this.postedJobs.each(this.addPostedJobView.bind(this));
   },
 
@@ -30,9 +29,5 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
     this.removeModelSubview(".posted-jobs-list", job)
   },
 
-  addSearchbar: function() {
-    var subview = new Indoge.Views.SearchBar();
-    this.addSubview(".search-bar", subview);
-  }
 
 })
