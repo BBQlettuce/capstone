@@ -1,8 +1,10 @@
 Indoge.Views.JobNew = Backbone.View.extend({
   template: JST["jobs/job_form"],
 
+  className: "content",
+
   events: {
-    "submit form": "submit"
+    "click button" : "submit"
   },
 
   initialize: function(options) {
@@ -15,14 +17,13 @@ Indoge.Views.JobNew = Backbone.View.extend({
 
   render: function() {
     this.$el.empty();
-    this.$el.append("<h1>Posting Job</h1>")
     this.$el.append(this.template({job: this.model, user: this.user}));
     return this;
   },
 
   submit: function(e) {
     e.preventDefault();
-    var data = $(e.currentTarget).serializeJSON();
+    var data = this.$("form").serializeJSON();
     this.model.set(data);
     this.model.save({}, {
       success: function() {
@@ -30,7 +31,7 @@ Indoge.Views.JobNew = Backbone.View.extend({
         Backbone.history.navigate("hire", {trigger: true});
       }.bind(this),
       error: function() {
-        console.log("huehuehue");
+        console.log("you fucked up");
       }
     })
   }

@@ -26,7 +26,7 @@ Indoge.Views.JobShow = Backbone.View.extend({
   timeAgo: function() {
     var msAgo = Date.now() - Date.parse(this.model.attributes.created_at);
     // first case 1 hr ago
-    if (msAgo <= 3600000) {
+    if (msAgo <= 7200000) {
       return "just now";
     // if less than a day, post hours
     } else if (msAgo <= 86400000) {
@@ -50,7 +50,7 @@ Indoge.Views.JobShow = Backbone.View.extend({
       dataType: "json",
       data: data,
       success: function() {
-        Indoge.currentUser.fetch();
+        Backbone.history.navigate("myprofile", {trigger: true})
         // console.log("job saved!");
       }
     })
@@ -67,7 +67,7 @@ Indoge.Views.JobShow = Backbone.View.extend({
       dataType: "json",
       data: data,
       success: function() {
-        Indoge.currentUser.fetch();
+        Backbone.history.navigate("myprofile", {trigger: true})
         // console.log("job unsaved!");
       }
     })

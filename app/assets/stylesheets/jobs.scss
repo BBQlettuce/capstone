@@ -20,29 +20,37 @@
 }
 
 .job-tab {
-  // border: 1px solid red;
   margin-bottom: 15px;
   line-height: 1.3;
   font-size: 14px;
 }
 
-.job-tab .job-title {
+.job-title {
   font-weight: bold;
   font-size: 16px;
 }
 
-.job-tab .poster {
+.job-full .job-title {
+  font-size: 18px;
+}
+
+.poster {
   font-size: 15px;
 }
 
-.job-tab .job-snippet {
+
+.job-snippet {
 
 }
 
-.job-tab .time-ago {
+.job-description {
+  margin: 9px 0;
+}
+
+.time-ago {
   color: gray;
 }
 
-.job-tab a.save-link, a.unsave-link {
+a.save-link, a.unsave-link {
   color: #7777cc;
 }
