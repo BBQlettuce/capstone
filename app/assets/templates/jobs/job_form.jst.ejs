@@ -1,14 +1,20 @@
-<h2>Posting Job</h2>
+<div class="new-job-page">
+  <h2>Post a Job</h2>
 
-<form>
-  <input type="hidden" name="user_id" value="<%=user.id%>">
+  <form>
+    <div class="form-inputs">
+      <input type="hidden" name="user_id" value="<%=user.id%>">
 
-  <label>Job Title</label>
-  <input type="text" name="title" value="<%job.escape('title')%>">
-  <br>
-  <label>Job Description</label>
-  <textarea name="description"></textarea>
-  <br>
+      <label>Job Title</label>
+      <br>
+      <input type="text" name="title" value="<%job.escape('title')%>">
+      <br>
+      <label>Job Description</label>
+      <br>
+      <textarea name="description"></textarea>
+      <br>
+    </div>
 
-  <button>Submit</button>
-</form>
+    <button>Submit</button>
+  </form>
+</div>
