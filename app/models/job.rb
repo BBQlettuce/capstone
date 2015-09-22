@@ -1,4 +1,7 @@
 class Job < ActiveRecord::Base
+  include PgSearch
+  multisearchable against: [:title, :description]
+  
   validates :title, :description, :poster_id, presence: true
   validates :salary, numericality: true, allow_nil: true
 

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, h1, h2, ul, li, form, input, button, a {
+html, body, h1, h2, ul, li, form, button, a {
   margin: 0;
   border: 0;
   padding: 0;
@@ -37,9 +37,9 @@ ul {
   list-style: none;
 }
 
-input:focus {
+/*input:focus {
   outline: solid #83bffc;
-}
+}*/
 
 .landing .logo {
   font-size: 60px;

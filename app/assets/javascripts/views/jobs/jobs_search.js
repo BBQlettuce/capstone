@@ -13,6 +13,7 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    debugger
     this.$el.html(this.template({jobs: this.jobs}));
     this.attachSubviews();
     return this;

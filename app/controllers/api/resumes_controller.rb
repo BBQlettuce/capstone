@@ -35,9 +35,13 @@ class Api::ResumesController < ApplicationController
     render :index
   end
 
-  def my
-    @resume = current_user.resume
-    render :show
+  # def my
+  #   @resume = current_user.resume
+  #   render :show
+  # end
+
+  def search
+    
   end
 
   private

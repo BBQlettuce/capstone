@@ -42,8 +42,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   jobsSearch: function() {
-    this.jobs.fetch();
-    var view = new Indoge.Views.JobsSearch({jobs: this.jobs});
+    var view = new Indoge.Views.JobsSearch({jobs: Indoge.jobSearchResults});
     this._swapView(view);
   },
 
@@ -79,7 +78,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   jobNew: function() {
-    var callback = this.employerProfile.bind(this);
+    var callback = this.jobNew.bind(this);
     if (!this._requireSignedIn(callback)) {
       return;
     };
@@ -96,7 +95,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   resumeForm: function() {
-    var callback = this.employeeProfile.bind(this);
+    var callback = this.resumeForm.bind(this);
     if (!this._requireSignedIn(callback)) {
       return;
     };

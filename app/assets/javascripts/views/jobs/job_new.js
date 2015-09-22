@@ -1,7 +1,7 @@
 Indoge.Views.JobNew = Backbone.View.extend({
   template: JST["jobs/job_form"],
 
-  className: "content",
+  className: "new-job-page",
 
   events: {
     "click button" : "submit"
