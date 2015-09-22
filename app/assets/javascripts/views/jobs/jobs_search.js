@@ -3,6 +3,11 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   className: "content",
 
+  events: {
+    "click .prev-page" : "prevPage",
+    "click .next-page" : "nextPage"
+  },
+
   initialize: function(options) {
     this.jobs = options.jobs;
     this.listenTo(this.jobs, "sync remove", this.render);
@@ -30,5 +35,25 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
   addSearchbar: function() {
     var subview = new Indoge.Views.SearchBar();
     this.addSubview(".search-bar", subview);
+  },
+
+  prevPage: function(e) {
+    e.preventDefault();
+    Indoge.jobSearchResults.currentPage() --;
+    Indoge.jobSearchResults.fetch({
+      data: {
+        what: Indoge.jobSearchResults.currentQuery(),
+        page: Indoge.jobSearchResults.currentPage()}
+    })
+  },
+
+  nextPage: function(e) {
+    e.preventDefault();
+    Indoge.jobSearchResults.currentPage() ++;
+    Indoge.jobSearchResults.fetch({
+      data: {
+        what: Indoge.jobSearchResults.currentQuery(),
+        page: Indoge.jobSearchResults.currentPage()}
+    })
   }
 })
