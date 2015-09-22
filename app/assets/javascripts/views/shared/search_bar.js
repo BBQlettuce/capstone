@@ -15,7 +15,7 @@ Indoge.Views.SearchBar = Backbone.View.extend({
     var query = this.$("form").serializeJSON();
     var what = query.what;
     Indoge.jobSearchResults.fetch({
-      data: {what: what}
+      data: {what: what, page: 1}
     })
     Backbone.history.navigate("jobs", {trigger: true});
   }
