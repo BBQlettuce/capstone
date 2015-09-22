@@ -11,4 +11,10 @@ class Job < ActiveRecord::Base
   class_name: "Jobsave",
   foreign_key: :job_id,
   primary_key: :id
+
+  has_many :jobtaggings,
+
+  has_many :tags,
+  through: :jobtaggings,
+  source: :tag
 end

@@ -6,6 +6,10 @@ gem 'omniauth-twitter'
 gem 'figaro'
 gem 'uuidtools'
 
+# search
+gem 'pg_search'
+gem 'kaminari'
+
 gem 'serialize_json-rails'
 # Backbone
 gem 'backbone-on-rails'
