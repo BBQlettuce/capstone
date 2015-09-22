@@ -19,7 +19,7 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
   },
 
   addJobView: function(job) {
-    var subview = new Indoge.Views.JobMiniShow({job: job});
+    var subview = new Indoge.Views.JobMiniShow({model: job});
     this.addSubview(".jobs-list", subview);
   },
 
