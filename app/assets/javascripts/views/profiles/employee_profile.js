@@ -22,7 +22,7 @@ Indoge.Views.EmployeeProfile = Backbone.CompositeView.extend({
   },
 
   addSavedJobView: function(job) {
-    var subview = new Indoge.Views.JobMiniShow({job: job});
+    var subview = new Indoge.Views.JobMiniShow({model: job});
     this.addSubview(".saved-jobs-list", subview)
   },
 

@@ -9,23 +9,22 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
     "click .unsave-link": "unsaveJob"
   },
 
-  initialize: function(options) {
-    this.job = options.job;
-    this.listenTo(this.job, "sync", this.render);
+  initialize: function() {
+    this.listenTo(this.model, "sync", this.render);
     this.listenTo(Indoge.currentUser, "sync", this.render);
   },
 
   render: function() {
     var saved = Indoge.currentUser.savedJobs().some(function(job) {
-      return job.attributes.id === this.job.id
+      return job.attributes.id === this.model.id
     }.bind(this));
     // console.log(saved);
-    this.$el.html(this.template({job: this.job, saved: saved, timeAgo: this.timeAgo()}));
+    this.$el.html(this.template({job: this.model, saved: saved, timeAgo: this.timeAgo()}));
     return this;
   },
 
   timeAgo: function() {
-    var msAgo = Date.now() - Date.parse(this.job.attributes.created_at);
+    var msAgo = Date.now() - Date.parse(this.model.attributes.created_at);
     // first case 1 hr ago
     if (msAgo <= 3600000) {
       return "just now";
@@ -43,7 +42,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
     e.preventDefault();
     var view = this;
     var data = {
-      "jobsave[job_id]": this.job.id,
+      "jobsave[job_id]": this.model.id,
       "jobsave[user_id]": Indoge.currentUser.id}
     $.ajax({
       url: "/api/jobsaves",
@@ -60,7 +59,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
   unsaveJob: function(e) {
     e.preventDefault();
     var data = {
-      "jobsave[job_id]": this.job.id,
+      "jobsave[job_id]": this.model.id,
       "jobsave[user_id]": Indoge.currentUser.id}
     $.ajax({
       url: "/api/jobsaves",

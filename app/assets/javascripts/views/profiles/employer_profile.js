@@ -21,7 +21,7 @@ Indoge.Views.EmployerProfile = Backbone.CompositeView.extend({
   },
 
   addPostedJobView: function(job) {
-    var subview = new Indoge.Views.JobMiniShow({job: job});
+    var subview = new Indoge.Views.JobMiniShow({model: job});
     this.addSubview(".posted-jobs-list", subview)
   },
 
