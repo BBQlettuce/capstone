@@ -1,6 +1,9 @@
 <div class="profile group">
   <div class="posted-jobs">
-    <h2>My posted jobs</h2>
+    <h2 class="section-title">My posted jobs</h2>
+      <% if (user.postedJobs().isEmpty()) { %>
+        You have no posted jobs.
+      <% } %>
     <ul class="posted-jobs-list">
     </ul>
   </div>

@@ -91,7 +91,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
 
   jobShow: function(id) {
     var job = this.jobs.getOrFetch(id);
-    var view = new Indoge.Views.JobShow({job: job});
+    var view = new Indoge.Views.JobShow({model: job});
     this._swapView(view);
   },
 
