@@ -1,7 +1,7 @@
 Indoge.Views.ResumesIndex = Backbone.View.extend({
   template: JST["resumes/resumes_index"],
 
-  className: "todo",
+  className: "content",
 
   initialize: function(options) {
     this.resumes = options.resumes;

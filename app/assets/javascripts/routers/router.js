@@ -79,7 +79,6 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   jobNew: function() {
-    debugger
     var callback = this.employerProfile.bind(this);
     if (!this._requireSignedIn(callback)) {
       return;
