@@ -60,3 +60,7 @@ input:focus {
 body {
   font-family: sans-serif;
 }
+
+button:hover {
+  cursor: pointer;
+}

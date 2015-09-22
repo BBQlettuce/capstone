@@ -2,7 +2,7 @@ Indoge.Views.SignupPage = Backbone.View.extend({
   template: JST["shared/signup_page"],
 
   className: "signup",
-  
+
   events: {
     "submit form": "signup"
   },
@@ -24,7 +24,7 @@ Indoge.Views.SignupPage = Backbone.View.extend({
     newUser.save({}, {
       success: function() {
         Indoge.currentUser.fetch();
-        Backbone.history.navigate("", {trigger: true})
+        Backbone.history.navigate("#", {trigger: true})
       },
       error: function() {
         alert("you fucked up");

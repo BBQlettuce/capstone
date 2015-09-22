@@ -7,7 +7,7 @@ Indoge.Views.SigninPage = Backbone.View.extend({
   },
 
   className: "signin",
-  
+
   events: {
     "submit form": "signin"
   },
@@ -36,7 +36,7 @@ Indoge.Views.SigninPage = Backbone.View.extend({
       this.callback();
     }
     else {
-      Backbone.history.navigate("", {trigger: true});
+      Backbone.history.navigate("#", {trigger: true});
     }
   }
 })

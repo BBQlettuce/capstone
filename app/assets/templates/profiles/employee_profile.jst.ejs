@@ -3,7 +3,10 @@
 
 <div class="profile group">
   <div class="saved-jobs">
-    <h2>My saved jobs</h2>
+    <h2 class="section-title">My saved jobs</h2>
+      <% if (user.savedJobs().isEmpty()) { %>
+        You have no saved jobs! Search for jobs above.
+      <% } %>
     <ul class="saved-jobs-list">
 
     </ul>

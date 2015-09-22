@@ -130,7 +130,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
   },
 
   _goHome: function() {
-    Backbone.history.navigate("", { trigger: true });
+    Backbone.history.navigate("#", { trigger: true });
   }
 
 })
