@@ -1,25 +1,21 @@
-Indoge.Views.JobsLanding = Backbone.View.extend({
+Indoge.Views.JobsLanding = Backbone.CompositeView.extend({
   template: JST["jobs/jobs_landing"],
 
   className: "landing",
 
-  events: {
-    "click .find-button": "search"
+  initialize: function () {
+    this.addSearchbar();
   },
 
   render: function() {
     this.$el.html(this.template);
+    this.attachSubviews();
     return this;
   },
 
-  // WILL BE OVERHAULED
-  search: function(e) {
-    e.preventDefault();
-    var query = this.$("form").serializeJSON();
-    var what = query.what;
-    Indoge.jobSearchResults.fetch({
-      data: {what: what}
-    })
-    Backbone.history.navigate("jobs", {trigger: true});
+  addSearchbar: function() {
+    var subview = new Indoge.Views.SearchBar();
+    this.addSubview(".search-bar", subview);
   }
+  
 })
