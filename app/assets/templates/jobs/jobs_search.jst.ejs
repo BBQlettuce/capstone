@@ -6,6 +6,11 @@
     SIDEBAR GOES HERE
   </div>
 
-  <ul class='jobs-list'>
-  </ul>
+  <div class="results">
+    <% if (jobs.isEmpty()) { %>
+      No results found, please try again
+    <% } %>
+    <ul class='jobs-list'>
+    </ul>
+  </div>
 </div>

@@ -20,11 +20,6 @@ Indoge.Views.JobsLanding = Backbone.View.extend({
     Indoge.jobSearchResults.fetch({
       data: {what: what}
     })
-    // var searchResults = new Indoge.Collections.JobsSearch();
-    // searchResults.fetch({
-    //   data: {query: what}
-    // });
-
     Backbone.history.navigate("jobs", {trigger: true});
   }
 })
