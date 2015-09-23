@@ -5,7 +5,8 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   events: {
     "click .prev-page" : "prevPage",
-    "click .next-page" : "nextPage"
+    "click .next-page" : "nextPage",
+    "click .page-link" : "goToPage"
   },
 
   initialize: function(options) {
@@ -44,10 +45,6 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   prevPage: function(e) {
     e.preventDefault();
-    // if (Indoge.jobSearchResults.page <= 1) {
-    //   alert("can't go any more previous");
-    //   return;
-    // }
     this.jobs.fetch({
       data: {
         what: this.jobs.query,
@@ -63,10 +60,6 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   nextPage: function(e) {
     e.preventDefault();
-    // if (Indoge.jobSearchResults.page === Indoge.jobSearchResults.numPages) {
-    //   alert("can't go any further");
-    //   return
-    // }
     this.jobs.fetch({
       data: {
         what: this.jobs.query,
@@ -76,6 +69,20 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
         if (this.jobs.page < this.jobs.numPages) {
           this.jobs.page ++;
         }
+      }.bind(this)
+    })
+  },
+
+  goToPage: function(e) {
+    e.preventDefault();
+    var pageNum = Number($(e.currentTarget).find("a").html());
+    this.jobs.fetch({
+      data: {
+        what: this.jobs.query,
+        page: pageNum
+      },
+      success: function() {
+        this.jobs.page = pageNum;
       }.bind(this)
     })
   }
