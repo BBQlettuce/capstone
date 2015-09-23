@@ -56,8 +56,8 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
       success: function() {
         if (this.jobs.page > 1) {
           this.jobs.page --;
-        }.bind(this)
-      }
+        }
+      }.bind(this)
     })
   },
 
@@ -73,7 +73,9 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
         page: this.jobs.page + 1
       },
       success: function() {
-        this.jobs.page ++;
+        if (this.jobs.page < this.jobs.numPages) {
+          this.jobs.page ++;
+        }
       }.bind(this)
     })
   }

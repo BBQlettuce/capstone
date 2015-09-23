@@ -14,16 +14,30 @@
     </ul>
 
     <% if (!jobs.isEmpty()) { %>
-      <nav>
+      <div class="page-nav">
         Results Page:
         <% if (jobs.page !== 1) { %>
-          <a class="prev-page" href="javascript:void(0)">&#171 Previous</a>
+          <span class="prev-page">
+            <a href="javascript:void(0)">&#171 Previous</a>
+          </span>
+        <% } %>
+
+        <% for (i = 1; i <= jobs.numPages; i++) { %>
+          <% if (i === jobs.page) { %>
+            <span><%=i%></span>
+          <% } else { %>
+            <span class="page-link">
+              <a href="javascript:void(0)"><%=i%></a>
+            </span>
+          <% } %>
         <% } %>
 
         <% if (jobs.page !== jobs.numPages) { %>
-  	      <a class="next-page" href="javascript:void(0)">Next &#187</a>
+  	      <span class="next-page">
+            <a href="javascript:void(0)">Next &#187</a>
+          </span>
         <% } %>
-      </nav>
+      </div>
     <% } %>
   </div>
 </div>

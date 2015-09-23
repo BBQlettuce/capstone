@@ -12,7 +12,7 @@ window.Indoge = {
 
     this.header = new Indoge.Views.Header({el: "#header"});
     new Indoge.Routers.Router({
-      jobsSearchResults: this.jobSearchResults,
+      jobs: jobs,
       resumes: resumes,
       $rootEl: $("#content")
     });
