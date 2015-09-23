@@ -30,3 +30,8 @@ u3.create_resume!(text:
     description: "Make easy treats without any effort. This is not a scam. Add some more lines to make it look longer. Hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue. "
   )
 end
+
+25.times do |i|
+  u = User.create!(email: "bot#{i}", name: "bot#{i}", password: "password")
+  u.create_resume!(text: "i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot. i am a bot.")
+end
