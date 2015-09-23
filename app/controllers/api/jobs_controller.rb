@@ -46,11 +46,13 @@ class Api::JobsController < ApplicationController
   # end
 
   def search
-    @search_results = PgSearch
-      .multisearch(params[:what])
-      .includes(:searchable)
-      .page(params[:page])
+    # @search_results = PgSearch
+    #   .multisearch(params[:what])
+    #   .includes(:searchable)
+    #   .page(params[:page])
 
+    @search_results = Job.search_jobs_by_all(params[:what])
+                          .page(params[:page])
     render :search
   end
 

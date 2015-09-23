@@ -1,7 +1,13 @@
 class Job < ActiveRecord::Base
   include PgSearch
-  multisearchable against: [:title, :description]
-  
+  pg_search_scope :search_jobs_by_all,
+    against: [:title, :description],
+    associated_against: {poster: :name}
+
+  def poster_name
+    poster.name
+  end
+
   validates :title, :description, :poster_id, presence: true
   validates :salary, numericality: true, allow_nil: true
 
