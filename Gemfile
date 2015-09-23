@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# file uploads
+gem 'paperclip'
+
 # omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'

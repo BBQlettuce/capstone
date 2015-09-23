@@ -45,7 +45,7 @@ class Api::ResumesController < ApplicationController
 
   private
   def resume_params
-    params.require(:resume).permit(:text, :private)
+    params.require(:resume).permit(:text, :private, :resume_pdf)
   end
 
 end

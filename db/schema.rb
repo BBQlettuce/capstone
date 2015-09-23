@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922162746) do
+ActiveRecord::Schema.define(version: 20150923212828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,15 @@ ActiveRecord::Schema.define(version: 20150922162746) do
   add_index "jobtaggings", ["job_id", "tag_id"], name: "index_jobtaggings_on_job_id_and_tag_id", unique: true, using: :btree
 
   create_table "resumes", force: :cascade do |t|
-    t.text     "text",                       null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "user_id",                    null: false
-    t.boolean  "private",    default: false, null: false
+    t.text     "text",                                    null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.integer  "user_id",                                 null: false
+    t.boolean  "private",                 default: false, null: false
+    t.string   "resume_pdf_file_name"
+    t.string   "resume_pdf_content_type"
+    t.integer  "resume_pdf_file_size"
+    t.datetime "resume_pdf_updated_at"
   end
 
   add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
