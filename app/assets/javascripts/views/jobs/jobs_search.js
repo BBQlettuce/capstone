@@ -10,8 +10,9 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.jobs = options.jobs;
-    this.listenTo(this.jobs, "sync remove", this.render);
+    this.listenTo(this.jobs, "sync", this.render);
     this.listenTo(this.jobs, "add", this.addJobView);
+    this.listenTo(this.jobs, "remove", this.removeJobView);
 
     this.addSearchbar();
     this.jobs.each(this.addJobView.bind(this));
@@ -28,6 +29,10 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
     this.addSubview(".jobs-list", subview);
   },
 
+  removeJobView: function(job) {
+    this.removeModelSubview(".jobs-list", job)
+  },
+
   addSidebar: function() {
 
   },
@@ -39,21 +44,29 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   prevPage: function(e) {
     e.preventDefault();
-    Indoge.jobSearchResults.currentPage() --;
     Indoge.jobSearchResults.fetch({
       data: {
-        what: Indoge.jobSearchResults.currentQuery(),
-        page: Indoge.jobSearchResults.currentPage()}
+        what: Indoge.jobSearchResults.query,
+        page: Indoge.jobSearchResults.page - 1
+      },
+      success: function() {
+        if (Indoge.jobSearchResults.page > 1) {
+          Indoge.jobSearchResults.page --;
+        }
+      }
     })
   },
 
   nextPage: function(e) {
     e.preventDefault();
-    Indoge.jobSearchResults.currentPage() ++;
     Indoge.jobSearchResults.fetch({
       data: {
-        what: Indoge.jobSearchResults.currentQuery(),
-        page: Indoge.jobSearchResults.currentPage()}
+        what: Indoge.jobSearchResults.query,
+        page: Indoge.jobSearchResults.page + 1
+      },
+      success: function() {
+        Indoge.jobSearchResults.page ++;
+      }
     })
   }
 })
