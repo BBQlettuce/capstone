@@ -56,3 +56,46 @@
 .new-job-page form button:hover {
   background: #4477ff;
 }
+
+.my-resume-page {
+  width: 660px;
+  margin: 15px auto;
+}
+
+.my-resume-page h2 {
+  text-align: center;
+  padding: 10px 20px;
+  width: 550px;
+  margin: 0 35px 15px 35px;
+  background: #e0e5ff;
+  font-size: 14px;
+}
+
+.my-resume-page form {
+  width: 570px;
+  padding: 20px 45px;
+}
+
+.my-resume-page textarea {
+  width: 560px;
+  height: 350px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.my-resume-page form button {
+  text-align: center;
+  margin-top: 10px;
+  height: 23px;
+  font-size: 15px;
+  color: white;
+  background: #3366cc;
+  border: 1px solid #6699ff;
+  border-style: outset;
+  padding: 4px 9px;
+  display: block;
+}
+
+.my-resume-page form button:hover {
+  background: #4477ff;
+}

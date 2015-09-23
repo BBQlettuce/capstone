@@ -17,6 +17,7 @@ Registered users can
 
 All users can:
 - [ ] Search for openings based on keywords and locations
+  - [x] Can search using keywords
 - [ ] Filter searches based on requirements/compensation/other attributes
 - [ ] Search for resumes using keywords and locations
 

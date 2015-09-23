@@ -5,7 +5,7 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     "submit form": "saveResume"
   },
 
-  className: "content",
+  className: "my-resume-page",
 
   initialize: function(options) {
     this.user = options.user;
