@@ -1,4 +1,4 @@
-json.extract! @resume, :text
-json.user do
+json.extract! @resume, :text, :updated_at
+json.poster do
   json.extract! @resume.user, :email, :name, :id
 end

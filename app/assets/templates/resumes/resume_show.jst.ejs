@@ -1,0 +1,15 @@
+<div class="resume-full">
+  <h2 class="owner-name">
+    <% if (resume.attributes.poster) { %>
+      <%=resume.attributes.poster.name%>
+    <% } %>
+  </h2>
+
+  <div class="resume-text">
+    <%= resume.escape('text') %>
+  </div>
+
+  <span class=last-updated>
+    <%= lastUpdated %>
+  </span>
+</div>

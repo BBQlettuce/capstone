@@ -103,6 +103,12 @@ Indoge.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  resumeShow: function(id) {
+    var resume = this.resumes.getOrFetch(id);
+    var view = new Indoge.Views.ResumeShow({model: resume});
+    this._swapView(view);
+  },
+
   _swapView: function(newView) {
     this._currentView && this._currentView.remove();
     this._currentView = newView;
