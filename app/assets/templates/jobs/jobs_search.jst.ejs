@@ -13,7 +13,7 @@
     <ul class='jobs-list'>
     </ul>
 
-    <% if (!jobs.isEmpty()) { %>
+    <% if (!jobs.isEmpty() && jobs.numPages > 1) { %>
       <div class="page-nav">
         Results Page:
         <% if (jobs.page !== 1) { %>
