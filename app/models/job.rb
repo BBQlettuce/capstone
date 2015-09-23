@@ -27,4 +27,12 @@ class Job < ActiveRecord::Base
   has_many :tags,
   through: :jobtaggings,
   source: :tag
+
+  def description_snippet
+    if description.length <= 160
+      return description
+    else
+      return description.slice(0, 160) + "..."
+    end
+  end
 end
