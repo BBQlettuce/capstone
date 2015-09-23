@@ -39,12 +39,6 @@ class Api::JobsController < ApplicationController
     render :index
   end
 
-  # to show the current user's jobs
-  # def my_posted
-  #   @jobs = current_user.posted_jobs
-  #   render :index
-  # end
-
   def search
     # @search_results = PgSearch
     #   .multisearch(params[:what])
@@ -52,6 +46,7 @@ class Api::JobsController < ApplicationController
     #   .page(params[:page])
 
     @search_results = Job.search_jobs_by_all(params[:what])
+                          .includes(:poster)
                           .page(params[:page])
     render :search
   end

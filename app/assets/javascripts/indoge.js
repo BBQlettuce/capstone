@@ -6,6 +6,7 @@ window.Indoge = {
   initialize: function() {
     var jobs = new Indoge.Collections.Jobs();
     this.jobSearchResults = new Indoge.Collections.JobSearchResults();
+    this.resumeSearchResults = new Indoge.Collections.ResumeSearchResults();
     var resumes = new Indoge.Collections.Resumes();
     this.currentUser = new Indoge.Models.CurrentUser();
     this.currentUser.fetch();

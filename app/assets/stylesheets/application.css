@@ -64,3 +64,8 @@ body {
 button:hover {
   cursor: pointer;
 }
+
+.content {
+  width: 900px;
+  margin: 15px auto;
+}

@@ -1,0 +1,43 @@
+<div class="search-bar">
+</div>
+
+<div class="main group">
+  <div class="sidebar">
+    SIDEBAR GOES HERE
+  </div>
+
+  <div class="results">
+    <% if (resumes.isEmpty()) { %>
+      No results found, please try again
+    <% } %>
+    <ul class='resumes-list'>
+    </ul>
+
+    <% if (!resumes.isEmpty() && resumes.numPages > 1) { %>
+      <div class="page-nav">
+        Results Page:
+        <% if (resumes.page !== 1) { %>
+          <span class="prev-page">
+            <a href="javascript:void(0)">&#171 Previous</a>
+          </span>
+        <% } %>
+
+        <% for (i = 1; i <= resumes.numPages; i++) { %>
+          <% if (i === resumes.page) { %>
+            <span><%=i%></span>
+          <% } else { %>
+            <span class="page-link">
+              <a href="javascript:void(0)"><%=i%></a>
+            </span>
+          <% } %>
+        <% } %>
+
+        <% if (resumes.page !== resumes.numPages) { %>
+  	      <span class="next-page">
+            <a href="javascript:void(0)">Next &#187</a>
+          </span>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+</div>

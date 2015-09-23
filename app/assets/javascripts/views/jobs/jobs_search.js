@@ -87,5 +87,3 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
     })
   }
 })
-
-        // <% for(var i = 1; i <= Indoge.jobSearchResults.) %>

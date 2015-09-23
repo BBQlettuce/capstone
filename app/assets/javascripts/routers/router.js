@@ -13,7 +13,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "jobs/new": "jobNew",
     "jobs/:id": "jobShow",
     "resumes": "resumesLanding",
-    "resumes/search": "resumesIndex",
+    "resumes/search": "resumesSearch",
     "resumes/:id": "resumeShow",
     "myprofile": "employeeProfile",
     "hire": "employerProfile",
@@ -51,9 +51,8 @@ Indoge.Routers.Router = Backbone.Router.extend({
     this._swapView(view)
   },
 
-  resumesIndex: function() {
-    this.resumes.fetch({reset: true});
-    var view = new Indoge.Views.ResumesIndex({resumes: this.resumes});
+  resumesSearch: function() {
+    var view = new Indoge.Views.ResumesSearch({resumes: Indoge.resumeSearchResults});
     this._swapView(view);
   },
 

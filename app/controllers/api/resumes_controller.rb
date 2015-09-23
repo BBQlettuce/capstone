@@ -35,13 +35,12 @@ class Api::ResumesController < ApplicationController
     render :index
   end
 
-  # def my
-  #   @resume = current_user.resume
-  #   render :show
-  # end
-
   def search
-    
+    @search_results = Resume.where(private: false)
+                        .search_resumes_by_all(params[:what])
+                        .includes(:user)
+                        .page(params[:page])
+    render :search
   end
 
   private

@@ -5,10 +5,6 @@ class Job < ActiveRecord::Base
     associated_against: {poster: :name},
     using: {tsearch: {prefix: true}}
 
-  def poster_name
-    poster.name
-  end
-
   validates :title, :description, :poster_id, presence: true
   validates :salary, numericality: true, allow_nil: true
 

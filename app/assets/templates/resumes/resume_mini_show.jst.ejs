@@ -1,0 +1,13 @@
+<h2 class="owner-name">
+  <a href="/#/resumes/<%=resume.id%>">
+    <%=resume.attributes.poster.name%>
+  </a>
+</h2>
+
+<div class="resume-snippet">
+  <%= resume.escape('text_snippet') %>
+</div>
+
+<span class=last-updated>
+  <%= lastUpdated %>
+</span>
