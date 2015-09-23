@@ -44,37 +44,39 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   prevPage: function(e) {
     e.preventDefault();
-    if (Indoge.jobSearchResults.page <= 1) {
-      alert("can't go any more previous");
-      return;
-    }
-    Indoge.jobSearchResults.fetch({
+    // if (Indoge.jobSearchResults.page <= 1) {
+    //   alert("can't go any more previous");
+    //   return;
+    // }
+    this.jobs.fetch({
       data: {
-        what: Indoge.jobSearchResults.query,
-        page: Indoge.jobSearchResults.page - 1
+        what: this.jobs.query,
+        page: this.jobs.page - 1
       },
       success: function() {
-        if (Indoge.jobSearchResults.page > 1) {
-          Indoge.jobSearchResults.page --;
-        }
+        if (this.jobs.page > 1) {
+          this.jobs.page --;
+        }.bind(this)
       }
     })
   },
 
   nextPage: function(e) {
     e.preventDefault();
-    if (Indoge.jobSearchResults.page === Indoge.jobSearchResults.numPages) {
-      alert("can't go any further");
-      return
-    }
-    Indoge.jobSearchResults.fetch({
+    // if (Indoge.jobSearchResults.page === Indoge.jobSearchResults.numPages) {
+    //   alert("can't go any further");
+    //   return
+    // }
+    this.jobs.fetch({
       data: {
-        what: Indoge.jobSearchResults.query,
-        page: Indoge.jobSearchResults.page + 1
+        what: this.jobs.query,
+        page: this.jobs.page + 1
       },
       success: function() {
-        Indoge.jobSearchResults.page ++;
-      }
+        this.jobs.page ++;
+      }.bind(this)
     })
   }
 })
+
+        // <% for(var i = 1; i <= Indoge.jobSearchResults.) %>

@@ -16,11 +16,11 @@
     <% if (!jobs.isEmpty()) { %>
       <nav>
         Results Page:
-        <% if (Indoge.jobSearchResults.page !== 1) { %>
+        <% if (jobs.page !== 1) { %>
           <a class="prev-page" href="javascript:void(0)">&#171 Previous</a>
         <% } %>
 
-        <% if (Indoge.jobSearchResults.page !== Indoge.jobSearchResults.numPages) { %>
+        <% if (jobs.page !== jobs.numPages) { %>
   	      <a class="next-page" href="javascript:void(0)">Next &#187</a>
         <% } %>
       </nav>
