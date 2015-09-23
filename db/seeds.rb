@@ -27,6 +27,6 @@ u3.create_resume!(text:
 
 25.times do |i|
   u4.posted_jobs.create!(title: "Totally legit job ##{i}",
-    description: "Make easy treats without any effort. This is not a scam. Add some more lines to make it look longer."
+    description: "Make easy treats without any effort. This is not a scam. Add some more lines to make it look longer. Hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue hue. "
   )
 end
