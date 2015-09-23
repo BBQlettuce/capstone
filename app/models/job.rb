@@ -2,7 +2,8 @@ class Job < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_jobs_by_all,
     against: [:title, :description],
-    associated_against: {poster: :name}
+    associated_against: {poster: :name},
+    using: {tsearch: {prefix: true}}
 
   def poster_name
     poster.name
