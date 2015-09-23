@@ -3,7 +3,7 @@
     <%=job.escape('title')%>
   </h2>
 
-  <% if (job.attributes.poster) { %>
+  <% if (!!job.attributes.poster) { %>
     Posted by <%= job.attributes.poster.name %>
     <br>
   <% } %>
@@ -15,8 +15,8 @@
   <span class="time-ago">
     <%=timeAgo%>
   </span>
-  <% if (!!job.attributes.poster) { %>
-    <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
+  <% if (Indoge.currentUser.isSignedIn()) { %>
+    <% if (!!job.attributes.poster && Indoge.currentUser.id !== job.attributes.poster.id) { %>
       <% var linkClass = saved ? "unsave-link" : "save-link"; %>
       <% var linkText = saved ? "unsave job" : "save job" %>
       - <a href="#" class="<%=linkClass%>"><%=linkText%></a>
