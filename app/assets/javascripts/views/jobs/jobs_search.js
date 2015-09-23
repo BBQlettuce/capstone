@@ -44,6 +44,10 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   prevPage: function(e) {
     e.preventDefault();
+    if (Indoge.jobSearchResults.page <= 1) {
+      alert("can't go any more previous");
+      return;
+    }
     Indoge.jobSearchResults.fetch({
       data: {
         what: Indoge.jobSearchResults.query,
@@ -59,6 +63,10 @@ Indoge.Views.JobsSearch = Backbone.CompositeView.extend({
 
   nextPage: function(e) {
     e.preventDefault();
+    if (Indoge.jobSearchResults.page === Indoge.jobSearchResults.numPages) {
+      alert("can't go any further");
+      return
+    }
     Indoge.jobSearchResults.fetch({
       data: {
         what: Indoge.jobSearchResults.query,

@@ -1,6 +1,17 @@
 Indoge.Collections.JobSearchResults = Backbone.Collection.extend({
   url: "/api/jobs/search",
-  model: Indoge.Models.Job
+  model: Indoge.Models.Job,
+
+  parse: function(response) {
+    if (response.total_count) {
+      this.totalCount = response.total_count;
+    }
+    if (response.num_pages) {
+      this.numPages = response.num_pages;
+    }
+
+    return response.search_results;
+  }
 
   // currentQuery: function () {
   //   this._currentQuery = this._currentQuery || "";

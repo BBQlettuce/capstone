@@ -15,8 +15,14 @@
 
     <% if (!jobs.isEmpty()) { %>
       <nav>
-        <a class="prev-page" href="javascript:void(0)">&#171 Previous</a>
-	      <a class="next-page" href="javascript:void(0)">Next &#187</a>
+        Results Page:
+        <% if (Indoge.jobSearchResults.page !== 1) { %>
+          <a class="prev-page" href="javascript:void(0)">&#171 Previous</a>
+        <% } %>
+
+        <% if (Indoge.jobSearchResults.page !== Indoge.jobSearchResults.numPages) { %>
+  	      <a class="next-page" href="javascript:void(0)">Next &#187</a>
+        <% } %>
       </nav>
     <% } %>
   </div>
