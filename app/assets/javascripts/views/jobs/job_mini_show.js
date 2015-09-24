@@ -27,7 +27,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
     var msAgo = Date.now() - Date.parse(this.model.get("created_at"));
     // first case 1 hr ago
     if (msAgo <= 7200000) {
-      return "just now";
+      return "just posted";
     // if less than a day, post hours
     } else if (msAgo <= 86400000) {
       return (Math.floor(msAgo/3600000)) + " hours ago";
