@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :resumes, only: [:show, :index, :create, :update, :destroy] do
       collection do
         get 'search'
-        get 'parse_pdf'
+        post 'parse_pdf'
       end
     end
     # resource :currentuser, only: [:show]

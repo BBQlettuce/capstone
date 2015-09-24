@@ -25,24 +25,24 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     var tempFormData = new FormData();
     tempFormData.append("resume[resume_pdf]", file);
 
-    // debugger;
-    //
-    // $.ajax({
-    //   url: "api/resumes/parse_pdf",
-    //   type: "POST",
-    //   data: tempFormData,
-    //   processData: false,
-    //   contentType: false,
-    //   success: function(resp) {
-    //     // model.set(model.parse(resp));
-    //     // model.trigger('sync', model, resp, options);
-    //     // options.success && options.success(model, resp, options);
-    //     debugger
-    //   },
-    //   error: function(resp){
-    //     options.error && options.error(model, resp, options);
-    //   }
-    // });
+    debugger;
+
+    $.ajax({
+      url: "api/resumes/parse_pdf",
+      type: "POST",
+      data: tempFormData,
+      processData: false,
+      contentType: false,
+      success: function(resp) {
+        // model.set(model.parse(resp));
+        // model.trigger('sync', model, resp, options);
+        // options.success && options.success(model, resp, options);
+        debugger
+      },
+      error: function(resp){
+        alert("you dun goofed");
+      }
+    });
   },
 
   savePdf: function(e) {

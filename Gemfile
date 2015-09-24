@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # file uploads
 gem 'paperclip'
+gem 'pdf-reader'
 
 # omniauth
 gem 'omniauth'

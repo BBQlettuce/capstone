@@ -46,7 +46,15 @@ class Api::ResumesController < ApplicationController
   end
 
   def parse_pdf
+    incoming_file = resume_params[:resume_pdf].tempfile
+    reader = PDF::Reader.new(incoming_file)
+    output_text = ""
 
+    reader.pages.each do |page|
+      output_text += page.text
+    end
+
+    render json: {parsed_text: output_text}
   end
 
   private
