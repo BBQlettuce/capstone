@@ -20,17 +20,17 @@ Indoge.Views.SignupPage = Backbone.View.extend({
     e.preventDefault();
     var data = $(e.currentTarget).serializeJSON();
     var newUser = new Indoge.Models.User(data);
-    // debugger
     newUser.save({}, {
       success: function() {
         Indoge.currentUser.fetch();
         Backbone.history.navigate("#", {trigger: true})
       },
       error: function() {
-        alert("you fucked up");
+        alert("Error");
+        Backbone.history.navigate("signup")
       }
     })
-    console.log(newUser);
+    // console.log(newUser);
   }
 
 

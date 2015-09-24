@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       signin!(@user)
-      render :show
+      render json: {}
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
     end

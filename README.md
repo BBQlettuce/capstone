@@ -8,7 +8,7 @@ Clone of job-searching site Indeed; App for doges to search for and post jobs.
 Registered users can
 - [x] Create accounts
 - [x] Create sessions
-- [ ] Upload resume
+- [x] Upload resume as pdf
 - [x] Create resume/profile using form
 - [x] Set privacy settings on resumes
 - [x] Save jobs
@@ -20,6 +20,7 @@ All users can:
   - [x] Can search using keywords
 - [ ] Filter searches based on requirements/compensation/other attributes
 - [ ] Search for resumes using keywords and locations
+  -[x] Can search using text
 
 ## Design Docs
 * [View Wireframes][views]

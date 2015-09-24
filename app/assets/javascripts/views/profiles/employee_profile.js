@@ -16,6 +16,7 @@ Indoge.Views.EmployeeProfile = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    debugger
     this.$el.html(this.template({user: this.user}));
     this.attachSubviews();
     return this;
