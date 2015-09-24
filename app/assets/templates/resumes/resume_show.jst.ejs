@@ -5,9 +5,13 @@
     <% } %>
   </h2>
 
-  <div class="resume-text">
-    <%= resume.escape('text') %>
-  </div>
+  <% if (resume.escape("resume_pdf")) { %>
+    <embed src="<%=resume.escape('resume_pdf')%>">
+  <% } else { %>
+    <div class="resume-text">
+      <%= resume.escape('text') %>
+    </div>
+  <% } %>
 
   <span class=last-updated>
     <%= lastUpdated %>

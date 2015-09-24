@@ -16,7 +16,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
 
   render: function() {
     var saved = Indoge.currentUser.savedJobs().some(function(job) {
-      return job.attributes.id === this.model.id
+      return job.id === this.model.id
     }.bind(this));
     // console.log(saved);
     this.$el.html(this.template({job: this.model, saved: saved, timeAgo: this.timeAgo()}));
@@ -24,7 +24,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
   },
 
   timeAgo: function() {
-    var msAgo = Date.now() - Date.parse(this.model.attributes.created_at);
+    var msAgo = Date.now() - Date.parse(this.model.get("created_at"));
     // first case 1 hr ago
     if (msAgo <= 7200000) {
       return "just now";

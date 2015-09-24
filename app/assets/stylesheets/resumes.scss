@@ -8,6 +8,7 @@
 .owner-name {
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: 9px;
 }
 
 .resume-full {
@@ -15,10 +16,10 @@
   margin: 0 auto;
 }
 
-.resume-full .resume-title {
-  font-size: 18px;
-  margin-bottom: 9px;
-}
+// .resume-full .resume-title {
+//   font-size: 18px;
+//   margin-bottom: 9px;
+// }
 
 .resume-snippet {
 
@@ -30,4 +31,14 @@
 
 .last-updated {
   color: gray;
+}
+
+.resume-full embed {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 25px auto;
+  width: 680px;
+  height: 880px;
 }
