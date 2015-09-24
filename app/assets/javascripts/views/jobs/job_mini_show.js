@@ -15,7 +15,6 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
   },
 
   render: function() {
-    debugger
     var saved = Indoge.currentUser.savedJobs().some(function(job) {
       return job.id === this.model.id
     }.bind(this));
