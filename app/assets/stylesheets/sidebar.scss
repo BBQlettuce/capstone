@@ -10,18 +10,24 @@
   margin-bottom: 10px;
 }
 
-.sidebar .criteria-name {
+.sidebar .criteria {
   font-size: 12px;
+}
+
+.sidebar .criteria-name {
   font-weight: bold;
 }
 
 .sidebar .criteria .filter {
   color: #666;
-  font-size: 12px;
 }
 
 .sidebar .criteria .chosen {
   font-weight: bold;
   pointer-events: none;
   cursor: default;
+}
+
+.sidebar .criteria .clear-filter {
+  
 }

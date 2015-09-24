@@ -1,18 +1,20 @@
 <% if (!!Indoge.jobSearchResults.query) { %>
   <p><%= Indoge.jobSearchResults.query %> jobs</p>
-
-  <div class="criteria">
-    <span class="criteria-name">Salary</span>
-    <ul>
-      <% for(i = 5; i <= 20; i += 5) { %>
-        <% var c = (i === min) ? "filter chosen" : "filter" %>
-        <li>
-          <a href="javascript:void(0)" class="<%=c%>" data-min="<%=i%>">
-            <%=i%>+ treats
-          </a>
-        </li>
-      <% } %>
-    </ul>
-  </div>
-
 <% } %>
+
+<div class="criteria">
+  <span class="criteria-name">Salary</span>
+  <ul>
+    <% for(i = 5; i <= 20; i += 5) { %>
+      <% var c = (i === min) ? "filter chosen" : "filter" %>
+      <li>
+        <a href="javascript:void(0)" class="<%=c%>" data-min="<%=i%>">
+          <%=i%>+ treats
+        </a>
+      </li>
+    <% } %>
+    <li>
+      <a href="javascript:void(0)" class="clear-filter">remove filter</a>
+    </li>
+  </ul>
+</div>
