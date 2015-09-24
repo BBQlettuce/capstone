@@ -5,7 +5,6 @@ class Api::ResumesController < ApplicationController
 
   def create
     @resume = current_user.build_resume(resume_params);
-    byebug
     if @resume.save
       render json: @resume
     else
