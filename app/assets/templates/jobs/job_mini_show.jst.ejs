@@ -1,24 +1,20 @@
 <h2 class="job-title">
   <a href="/#/jobs/<%=job.id%>">
-    <%=job.escape('title')%>
+    <%=job.escape("title")%>
   </a>
 </h2>
 
-<% if (job.attributes.poster) { %>
-  <h2 class="poster">Posted by <%= job.attributes.poster.name %></h2>
-<% } %>
+<h2 class="poster">Posted by <%= job.escape("poster_name") %></h2>
 
 <div class="job-snippet">
-  <%= job.escape('description_snippet') %>
+  <%= job.escape("description_snippet") %>
 </div>
 
 <span class="time-ago">
   <%=timeAgo%>
 </span>
-<% if (job.attributes.poster) { %>
-  <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.attributes.poster.id) { %>
-    <% var linkClass = saved ? "unsave-link" : "save-link"; %>
-    <% var linkText = saved ? "unsave job" : "save job" %>
-    - <a href="#" class="<%=linkClass%>"><%=linkText%></a>
-  <% } %>
+<% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.get("poster_id")) { %>
+  <% var linkClass = saved ? "unsave-link" : "save-link"; %>
+  <% var linkText = saved ? "unsave job" : "save job" %>
+  - <a href="javascript:void(0)" class="<%=linkClass%>"><%=linkText%></a>
 <% } %>
