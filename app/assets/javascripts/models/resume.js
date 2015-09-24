@@ -9,7 +9,7 @@ Indoge.Models.Resume = Backbone.Model.extend({
   saveFormData: function(formData, options) {
     var method = this.isNew() ? "POST" : "PUT";
     var model = this;
-
+    
     $.ajax({
       url: _.result(model, "url"),
       type: method,
