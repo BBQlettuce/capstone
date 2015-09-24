@@ -1,8 +1,6 @@
 <div class="resume-full">
   <h2 class="owner-name">
-    <% if (resume.attributes.poster) { %>
-      <%=resume.attributes.poster.name%>
-    <% } %>
+    <%=resume.escape("poster_name")%>
   </h2>
 
   <% if (resume.escape("resume_pdf")) { %>
