@@ -39,10 +39,18 @@ class Api::ResumesController < ApplicationController
   end
 
   def search
-    @search_results = Resume.where(private: false)
-                        .search_resumes_by_all(params[:what])
-                        .includes(:user)
-                        .page(params[:page])
+    if params[:what] == ""
+      @search_results = Resume.all
+                          .where(private: false)
+                          .includes(:user)
+                          .order("created_at DESC")
+                          .page(params[:page])
+    else
+      @search_results = Resume.where(private: false)
+                          .search_resumes_by_all(params[:what])
+                          .includes(:user)
+                          .page(params[:page])
+    end
     render :search
   end
 

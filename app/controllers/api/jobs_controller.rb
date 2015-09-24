@@ -40,14 +40,15 @@ class Api::JobsController < ApplicationController
   end
 
   def search
-    # @search_results = PgSearch
-    #   .multisearch(params[:what])
-    #   .includes(:searchable)
-    #   .page(params[:page])
-
-    @search_results = Job.search_jobs_by_all(params[:what])
-                          .includes(:poster)
-                          .page(params[:page])
+    if params[:what] == ""
+      @search_results = Job.all.includes(:poster)
+                              .order("created_at DESC")
+                              .page(params[:page])
+    else
+      @search_results = Job.search_jobs_by_all(params[:what])
+                            .includes(:poster)
+                            .page(params[:page])
+    end
     render :search
   end
 
