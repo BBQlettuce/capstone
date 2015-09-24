@@ -14,7 +14,7 @@ class Resume < ActiveRecord::Base
   primary_key: :id
 
   has_attached_file :resume_pdf, default_url: "testpdf.pdf"
-  # validates_attachment :resume_pdf, content_type: "application/pdf"
+  validates_attachment :resume_pdf, content_type: {content_type: "application/pdf"}
 
   # change this to use file lines later
   def text_snippet

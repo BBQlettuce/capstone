@@ -1,6 +1,8 @@
 class Api::ResumesController < ApplicationController
   before_action :require_signin, only: [:create, :update, :destroy]
 
+  wrap_parameters false
+  
   def create
     @resume = current_user.build_resume(resume_params);
     if @resume.save
