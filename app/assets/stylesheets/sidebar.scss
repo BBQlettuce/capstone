@@ -1,16 +1,27 @@
-.main .sidebar {
+.sidebar {
   float: left;
   width: 180px;
   padding: 0 10px;
 }
 
-.main .sidebar p {
+.sidebar p {
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: 10px;
 }
 
-.main .sidebar .criteria a {
+.sidebar .criteria-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sidebar .criteria .filter {
   color: #666;
   font-size: 12px;
+}
+
+.sidebar .criteria .chosen {
+  font-weight: bold;
+  pointer-events: none;
+  cursor: default;
 }
