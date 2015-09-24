@@ -1,6 +1,9 @@
 json.extract! current_user, :id, :email, :name
 
-json.resume current_user.resume
+json.resume do
+  json.extract! current_user.resume, :text, :updated_at
+  json.resume_pdf asset_path(current_user.resume.resume_pdf.url)
+end
 
 json.posted_jobs do
   json.array! current_user.posted_jobs do |p_job|
