@@ -52,8 +52,3 @@ Indoge.Views.Sidebar = Backbone.View.extend({
   }
 
 })
-//
-// <li><a class="filter" href="javascript:void(0)" data-min="5">5+ treats</a></li>
-// <li><a class="filter" href="javascript:void(0)" data-min="10">10+ treats</a></li>
-// <li><a class="filter" href="javascript:void(0)" data-min="15">15+ treats</a></li>
-// <li><a class="filter" href="javascript:void(0)" data-min="20">20+ treats</a></li>

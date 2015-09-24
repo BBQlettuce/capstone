@@ -31,7 +31,7 @@ Indoge.Views.JobNew = Backbone.View.extend({
         Backbone.history.navigate("hire", {trigger: true});
       }.bind(this),
       error: function() {
-        console.log("you fucked up");
+        console.log("invalid job");
       }
     })
   }

@@ -8,6 +8,12 @@
     <br>
     <input type="text" name="title" value="<%job.escape('title')%>">
     <br>
+
+    <label>Salary (treats per week)</label>
+    <br>
+    <input type="number" name="salary" value="<%job.escape('salary')%>" min="0">
+    <br>
+
     <label>Job Description</label>
     <br>
     <textarea name="description"></textarea>

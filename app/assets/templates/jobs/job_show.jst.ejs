@@ -10,6 +10,10 @@
     <%= job.escape("description") %>
   </div>
 
+  <% if (job.escape("salary")) { %>
+    <p> Salary: <%= job.escape("salary") %> treats per week </p>
+  <% } %>
+
   <span class="time-ago">
     <%=timeAgo%>
   </span>
