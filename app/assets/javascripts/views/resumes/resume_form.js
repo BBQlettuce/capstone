@@ -54,26 +54,13 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
       formData.append("resume[resume_pdf]", file);
     }
     this.user.resume().saveFormData(formData, {
-      success: function(){
+      success: function() {
         Backbone.history.navigate("myprofile", { trigger: true });
+      },
+      error: function() {
+        alert("something went wrong");
       }
     });
   }
 
-  // saveResume: function(e) {
-  //   e.preventDefault();
-  //   var data = $(e.currentTarget).serializeJSON();
-  //   if (!data.private) {
-  //     data.private = false;
-  //   };
-  //   this.user.resume().set(data);
-  //   this.user.resume().save({}, {
-  //     success: function() {
-  //       Backbone.history.navigate("myprofile", {trigger: true});
-  //     },
-  //     error: function() {
-  //       console.log("huehuehue");
-  //     }
-  //   })
-  // }
 })
