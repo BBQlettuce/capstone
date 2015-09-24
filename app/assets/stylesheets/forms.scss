@@ -71,16 +71,21 @@
   font-size: 14px;
 }
 
-.my-resume-page form {
+.my-resume-page .file {
+  padding: 0 45px;
+}
+
+.my-resume-page .text {
   width: 570px;
   padding: 20px 45px;
 }
 
 .my-resume-page textarea {
   width: 560px;
+  max-width: 560px;
   height: 350px;
   font-size: 14px;
-  padding: 5px;
+  padding: 8px;
 }
 
 .my-resume-page form button {
