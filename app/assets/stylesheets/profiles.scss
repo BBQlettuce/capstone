@@ -11,3 +11,17 @@
   font-size: 20px;
   margin-bottom: 15px;
 }
+
+.profile .resume {
+  position: relative;
+}
+
+.profile embed {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px auto;
+  width: 680px;
+  height: 880px;
+}

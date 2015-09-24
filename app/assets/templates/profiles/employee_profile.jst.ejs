@@ -17,8 +17,11 @@
     <br>
     <a href="/#/myresume">Build my resume</a>
     <br>
-    <%= user.resume().escape('text') %>
 
-    <embed src="<%=user.resume().escape('resume_pdf')%>" width="800px" height="800px"/>
+    <% if (!!user.resume().attributes.resume_pdf) { %>
+      <embed src="<%=user.resume().escape('resume_pdf')%>">
+    <% } else { %>
+      <%= user.resume().escape('text') %>
+    <% } %>
   </div>
 </div>

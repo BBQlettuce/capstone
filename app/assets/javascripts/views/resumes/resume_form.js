@@ -51,11 +51,8 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     formData.append("resume[text]", text);
     formData.append("resume[resume_pdf]", file);
 
-    debugger
-
     this.user.resume().saveFormData(formData, {
       success: function(){
-        debugger
         Backbone.history.navigate("myprofile", { trigger: true });
       }
     });
