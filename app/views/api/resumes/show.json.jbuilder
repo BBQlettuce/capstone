@@ -3,4 +3,6 @@ json.poster do
   json.extract! @resume.user, :email, :name, :id
 end
 
-json.resume_pdf asset_path(@resume.resume_pdf.url)
+if !!resume.resume_pdf_file_name
+  json.resume_pdf asset_path(@resume.resume_pdf.url)
+end

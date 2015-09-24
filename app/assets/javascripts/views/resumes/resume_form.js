@@ -37,7 +37,8 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
         that.$("textarea").html(parsed_text);
       },
       error: function(){
-        alert("you dun goofed");
+        alert("invalid file");
+        Backbone.history.navigate("myresume", {trigger: true})
       }
     });
   },
@@ -49,8 +50,9 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
 
     var formData = new FormData();
     formData.append("resume[text]", text);
-    formData.append("resume[resume_pdf]", file);
-
+    if (!!file) {
+      formData.append("resume[resume_pdf]", file);
+    }
     this.user.resume().saveFormData(formData, {
       success: function(){
         Backbone.history.navigate("myprofile", { trigger: true });

@@ -18,7 +18,7 @@
     <a href="/#/myresume">Build my resume</a>
     <br>
 
-    <% if (!!user.resume().attributes.resume_pdf) { %>
+    <% if (!!user.resume().get.resume_pdf) { %>
       <embed src="<%=user.resume().escape('resume_pdf')%>">
     <% } else { %>
       <%= user.resume().escape('text') %>
