@@ -46,8 +46,8 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
   saveResume: function(e) {
     e.preventDefault();
     var file = this.$("#resume_post")[0].files[0];
-    var text = this.$("textarea").val();
-
+    var attrs = this.$(".text").serializeJSON();
+    debugger;
     var formData = new FormData();
     formData.append("resume[text]", text);
     if (!!file) {

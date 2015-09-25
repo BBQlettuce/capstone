@@ -24,7 +24,7 @@ Indoge.Views.SigninPage = Backbone.View.extend({
       email: data.email,
       password: data.password,
       error: function() {
-        alert("you dun goofed");
+        alert("wrong email and password combo");
       }
     });
   },

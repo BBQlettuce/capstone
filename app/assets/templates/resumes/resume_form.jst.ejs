@@ -3,16 +3,23 @@
 <div class="file">
   <form class="pdftest">
     <input type="file" name="resume_pdf" id="resume_post">
-    <!-- <input type="submit" value="Upload"> -->
   </form>
 </div>
 
 <form class="text">
-  <input type="hidden" name="user_id" value="<%=user.id%>">
-  <textarea name="text"><%=user.resume().escape('text')%></textarea>
-  <label>Set resume to private?</label>
-  <input type="checkbox" name="private" value="true">
+  <textarea id="text"><%=user.resume().escape('text')%></textarea>
+  <label>Who can see your resume?</label>
+  <input type="radio" name="private" value="false"> <span>Public</span>
+  <br>
+  <p class="radio-desc">
+    Your resume will be visible to all doges, cats, hoomins, etc. in the search.
+  </p>
 
+  <input type="radio" name="private" value="true"> <span>Private</span>
+  <br>
+  <p class="radio-desc">
+    Your resume is not visible in search.
+  </p>
 
   <button>Save</button>
 </form>
