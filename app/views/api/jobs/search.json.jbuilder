@@ -4,5 +4,4 @@ json.search_results do
   end
 end
 
-json.total_count @search_results.total_count
 json.num_pages @search_results.num_pages

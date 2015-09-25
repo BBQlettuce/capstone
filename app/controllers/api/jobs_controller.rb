@@ -44,11 +44,12 @@ class Api::JobsController < ApplicationController
     jobs_to_search = min_salary.nil? ? Job.all : Job.where("salary >= ?", min_salary)
     if params[:what] == ""
       @search_results = jobs_to_search
-                            .includes(:poster)
                             .order("created_at DESC")
+                            .includes(:poster)
                             .page(params[:page])
     else
       @search_results = jobs_to_search
+                            .order("created_at DESC")
                             .search_jobs_by_all(params[:what])
                             .includes(:poster)
                             .page(params[:page])
