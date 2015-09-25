@@ -1,4 +1,4 @@
-Indoge.Views.JobNew = Backbone.View.extend({
+Indoge.Views.JobForm = Backbone.View.extend({
   template: JST["jobs/job_form"],
 
   className: "new-job-page",
@@ -16,8 +16,9 @@ Indoge.Views.JobNew = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.empty();
-    this.$el.append(this.template({job: this.model, user: this.user}));
+    // this.$el.empty();
+    // this.$el.append(this.template({job: this.model, user: this.user}));
+    this.$el.html(this.template({job: this.model, user: this.user}))
     return this;
   },
 

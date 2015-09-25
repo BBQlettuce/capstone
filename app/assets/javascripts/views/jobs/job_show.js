@@ -6,6 +6,7 @@ Indoge.Views.JobShow = Backbone.View.extend({
   events: {
     "click .save-link": "saveJob",
     "click .unsave-link": "unsaveJob",
+    "click .edit-job-link": "editJob",
     "click .delete-job-link": "deleteJob"
   },
 
@@ -73,7 +74,13 @@ Indoge.Views.JobShow = Backbone.View.extend({
     })
   },
 
-  deleteJob: function() {
+  editJob: function(e) {
+    e.preventDefault();
+    Backbone.history.navigate("jobs/" + this.model.id + "/edit", {trigger: true})
+  },
+
+  deleteJob: function(e) {
+    e.preventDefault();
     this.model.destroy({
       success: function() {
         this.remove();

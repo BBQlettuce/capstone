@@ -12,6 +12,7 @@ Indoge.Routers.Router = Backbone.Router.extend({
     "jobs": "jobsSearch",
     "jobs/new": "jobNew",
     "jobs/:id": "jobShow",
+    "jobs/:id/edit": "jobEdit",
     "resumes": "resumesLanding",
     "resumes/search": "resumesSearch",
     "resumes/:id": "resumeShow",
@@ -83,7 +84,18 @@ Indoge.Routers.Router = Backbone.Router.extend({
     };
     var newJob = new Indoge.Models.Job();
     Indoge.currentUser.fetch();
-    var view = new Indoge.Views.JobNew({user: Indoge.currentUser, jobs: this.jobs, model: newJob});
+    var view = new Indoge.Views.JobForm({user: Indoge.currentUser, jobs: this.jobs, model: newJob});
+    this._swapView(view);
+  },
+
+  jobEdit: function(id) {
+    var callback = this.jobEdit.bind(this, id);
+    if (!this._requireSignedIn(callback)) {
+      return;
+    };
+    var job = this.jobs.getOrFetch(id);
+    Indoge.currentUser.fetch();
+    var view = new Indoge.Views.JobForm({user: Indoge.currentUser, jobs: this.jobs, model: job})
     this._swapView(view);
   },
 

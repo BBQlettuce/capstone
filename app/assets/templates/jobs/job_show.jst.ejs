@@ -7,7 +7,7 @@
   <br>
 
   <div class="job-description">
-    <%= job.escape("description") %>
+    <%= job.escape("description").replace(/\n/g, '<br>') %>
   </div>
 
   <% if (job.escape("salary")) { %>
@@ -23,6 +23,7 @@
       <% var linkText = saved ? "unsave job" : "save job" %>
       - <a href="javascript:void(0)" class="<%=linkClass%>"><%=linkText%></a>
     <% } else { %>
+      - <a href="javascript:void(0)" class="edit-job-link">edit job</a>
       - <a href="javascript:void(0)" class="delete-job-link">delete job</a>
     <% } %>
   <% } %>
