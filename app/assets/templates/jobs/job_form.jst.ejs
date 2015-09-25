@@ -1,4 +1,10 @@
-<h2>Post a Job</h2>
+<h2>
+  <% if (job.isNew()) { %>
+    Post a Job
+  <% } else { %>
+    Edit Job
+  <% } %>
+</h2>
 
 <form>
   <div class="form-inputs">
