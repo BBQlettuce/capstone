@@ -45,6 +45,7 @@ class Api::ResumesController < ApplicationController
                           .page(params[:page])
     else
       @search_results = Resume.where(private: false)
+                          .order("updated_at DESC")
                           .search_resumes_by_all(params[:what])
                           .includes(:user)
                           .page(params[:page])
