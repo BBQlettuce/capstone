@@ -45,6 +45,7 @@ ul {
   font-size: 64px;
   display: block;
   padding: 20px;
+  pointer-events: none;
 }
 
 .landing .rlogo {
@@ -54,6 +55,7 @@ ul {
   display: block;
   padding: 20px;
   position: relative;
+  pointer-events: none;
 }
 
 .landing .rlogo span {
@@ -69,6 +71,10 @@ ul {
 .logo, .rlogo {
   font-weight: bold;
   color: #3366cc;
+}
+
+.content .logo, .rcontent .rlogo {
+  cursor: pointer;
 }
 
 .landing {

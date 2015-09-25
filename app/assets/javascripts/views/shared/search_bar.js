@@ -2,7 +2,8 @@ Indoge.Views.SearchBar = Backbone.View.extend({
   template: JST['shared/search_bar'],
 
   events: {
-    "click .find-button": "search"
+    "click .find-button": "search",
+    "click .logo": "backToLanding"
   },
 
   render: function() {
@@ -26,6 +27,9 @@ Indoge.Views.SearchBar = Backbone.View.extend({
     Backbone.history.navigate("jobs", {trigger: true});
   },
 
-
+  backToLanding: function(e) {
+    e.preventDefault();
+    Backbone.history.navigate("#", {trigger: true})
+  }
 
 })
