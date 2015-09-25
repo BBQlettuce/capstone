@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       collection do
         get 'search'
         post 'parse_pdf'
+        post 'delete_pdf'
       end
     end
     # resource :currentuser, only: [:show]
