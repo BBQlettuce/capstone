@@ -49,8 +49,12 @@
 }
 
 // things that are different if not on the front page:
+.rcontent {
+  width: 950px;
+  margin: 15px auto;
+}
 
-.content .logo, .content .rlogo {
+.content .logo, .rcontent .rlogo {
   display: block;
   float: left;
   font-size: 40px;
@@ -60,7 +64,7 @@
   position: relative;
 }
 
-.content .rlogo span {
+.rcontent .rlogo span {
   position: absolute;
   font-size: 18px;
   font-weight: normal;
@@ -70,14 +74,14 @@
   bottom: -8px;
 }
 
-.content .top-label {
+.content .top-label, .rcontent .top-label {
   font-size: 14px;
 }
 
-.content .find-button {
+.content .find-button, .rcontent .find-button {
   margin-top: 0;
 }
 
-.content .search-bar {
+.content .search-bar, .rcontent .search-bar {
   margin-bottom: 20px;
 }

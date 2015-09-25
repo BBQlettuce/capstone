@@ -4,8 +4,14 @@
 
 
 .main .results {
+  display: block;
   float: right;
   width: 700px;
+}
+
+.rcontent .main .results {
+  float: right;
+  padding-right: 50px;
 }
 
 .main .page-nav {

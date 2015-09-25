@@ -1,7 +1,7 @@
 Indoge.Views.ResumesSearch = Backbone.CompositeView.extend({
   template: JST["resumes/resumes_search"],
 
-  className: "content",
+  className: "rcontent",
 
   events: {
     "click .prev-page" : "prevPage",
