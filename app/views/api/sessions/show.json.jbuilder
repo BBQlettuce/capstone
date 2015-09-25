@@ -2,7 +2,7 @@ json.extract! current_user, :id, :email, :name
 
 if !!current_user.resume
   json.resume do
-    json.extract! current_user.resume, :id, :text, :updated_at
+    json.extract! current_user.resume, :id, :text, :updated_at, :private
     if !!current_user.resume.resume_pdf_file_name
       json.resume_pdf asset_path(current_user.resume.resume_pdf.url)
     end

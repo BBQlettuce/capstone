@@ -47,9 +47,9 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     e.preventDefault();
     var file = this.$("#resume_post")[0].files[0];
     var attrs = this.$(".text").serializeJSON();
-    debugger;
     var formData = new FormData();
-    formData.append("resume[text]", text);
+    formData.append("resume[text]", attrs.text);
+    formData.append("resume[private]", attrs.private);
     if (!!file) {
       formData.append("resume[resume_pdf]", file);
     }
