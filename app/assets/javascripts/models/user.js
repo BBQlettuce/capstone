@@ -84,6 +84,7 @@ Indoge.Models.CurrentUser = Indoge.Models.User.extend({
       dataType: "json",
       success: function() {
         user.clear();
+        user._resume = null;
       }
     });
   },
