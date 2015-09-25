@@ -74,7 +74,7 @@ Indoge.Views.JobShow = Backbone.View.extend({
   },
 
   deleteJob: function() {
-    this.job.destroy({
+    this.model.destroy({
       success: function() {
         this.remove();
         Backbone.history.navigate("hire", {trigger: true});

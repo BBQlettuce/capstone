@@ -17,8 +17,12 @@
   <span class="time-ago">
     <%=timeAgo%>
   </span>
-  <% if (Indoge.currentUser.isSignedIn() && Indoge.currentUser.id !== job.get("poster_id")) { %>
-    <% var linkClass = saved ? "unsave-link" : "save-link"; %>
-    <% var linkText = saved ? "unsave job" : "save job" %>
-    - <a href="javascript:void(0)" class="<%=linkClass%>"><%=linkText%></a>
+  <% if (Indoge.currentUser.isSignedIn()) { %>
+    <% if (Indoge.currentUser.id !== job.get("poster_id")) { %>
+      <% var linkClass = saved ? "unsave-link" : "save-link"; %>
+      <% var linkText = saved ? "unsave job" : "save job" %>
+      - <a href="javascript:void(0)" class="<%=linkClass%>"><%=linkText%></a>
+    <% } else { %>
+      - <a href="javascript:void(0)" class="delete-job-link">delete job</a>
+    <% } %>
   <% } %>
