@@ -13,15 +13,15 @@
   </div>
 
   <div class="resume">
-    <h2>My resume</h2>
-    <br>
+    <h2 class="section-title">My resume</h2>
     <a href="/#/myresume">Build my resume</a>
     <br>
-
     <% if (!!user.resume().get('resume_pdf')) { %>
       <embed src="<%=user.resume().escape('resume_pdf')%>">
     <% } else { %>
-      <%= user.resume().escape('text') %>
+      <div class="resume-text">
+        <%= user.resume().escape('text').replace(/\n/g, '<br>') %>
+      </div>
     <% } %>
   </div>
 </div>
