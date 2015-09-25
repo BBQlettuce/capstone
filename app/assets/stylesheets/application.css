@@ -66,7 +66,7 @@ ul {
   left: 150px;
 }
 
-.logo {
+.logo, .rlogo {
   font-weight: bold;
   color: #3366cc;
 }

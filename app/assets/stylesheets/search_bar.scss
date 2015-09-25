@@ -50,13 +50,24 @@
 
 // things that are different if not on the front page:
 
-.content .logo {
+.content .logo, .content .rlogo {
   display: block;
   float: left;
   font-size: 40px;
   text-align: center;
   width: 200px;
   margin-top: 10px;
+  position: relative;
+}
+
+.content .rlogo span {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  color: #ff6d0d;
+  display: block;
+  left: 36px;
+  bottom: -8px;
 }
 
 .content .top-label {
