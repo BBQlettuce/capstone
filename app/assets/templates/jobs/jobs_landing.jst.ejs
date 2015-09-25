@@ -1,3 +1,9 @@
 <div class="search-bar">
 
 </div>
+
+<% if (!Indoge.currentUser.isSignedIn()) { %>
+  <div class="guest-login">
+    
+  </div>
+<% } %>

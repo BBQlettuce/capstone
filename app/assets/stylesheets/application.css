@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, h1, h2, ul, li, form, button, a, p {
+html, body, h1, h2, ul, li, form, input, button, a, p {
   margin: 0;
   border: 0;
   padding: 0;
@@ -42,9 +42,28 @@ ul {
 }*/
 
 .landing .logo {
-  font-size: 60px;
+  font-size: 64px;
   display: block;
   padding: 20px;
+}
+
+.landing .rlogo {
+  font-size: 48px;
+  font-weight: bold;
+  color: #3366cc;
+  display: block;
+  padding: 20px;
+  position: relative;
+}
+
+.landing .rlogo span {
+  font-size: 20px;
+  font-weight: normal;
+  color: #ff6d0d;
+  position: absolute;
+  display: block;
+  bottom: 12px;
+  left: 150px;
 }
 
 .logo {

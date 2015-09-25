@@ -20,7 +20,7 @@
 }
 
 .new-job-page form label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 1px;
 }
@@ -34,10 +34,11 @@
 }
 
 .new-job-page form textarea {
-  width: 490px;
+  width: 478px;
   min-height: 150px;
   border: 1px solid #ccc;
   font-size: 14px;
+  padding: 6px;
 }
 
 .new-job-page form button {
