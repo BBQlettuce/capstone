@@ -69,3 +69,15 @@ button:hover {
   width: 900px;
   margin: 15px auto;
 }
+
+img {
+  z-index: -1;
+  width: 600px;
+  height: auto;
+  opacity: .07;
+  border-radius: 50%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
