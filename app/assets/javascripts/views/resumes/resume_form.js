@@ -3,7 +3,6 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
 
   events: {
     "submit .text": "saveResume",
-    // "submit .pdftest": "savePdf",
     "change #resume_post": "parseFileIntoTextarea"
   },
 
@@ -53,13 +52,13 @@ Indoge.Views.ResumeForm = Backbone.View.extend({
     if (!!file) {
       formData.append("resume[resume_pdf]", file);
     }
-    
+
     this.user.resume().saveFormData(formData, {
       success: function() {
         Backbone.history.navigate("myprofile", { trigger: true });
       },
       error: function() {
-        alert("something went wrong");
+        alert("all fields must be filled out");
       }
     });
   }

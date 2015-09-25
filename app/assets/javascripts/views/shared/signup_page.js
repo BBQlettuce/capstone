@@ -26,7 +26,7 @@ Indoge.Views.SignupPage = Backbone.View.extend({
         Backbone.history.navigate("#", {trigger: true})
       },
       error: function() {
-        alert("Error");
+        alert("error");
         Backbone.history.navigate("signup")
       }
     })
