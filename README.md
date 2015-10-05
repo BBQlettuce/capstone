@@ -9,7 +9,7 @@ All users can search for jobs and resumes without an account. Signing up gives
 users the ability to save jobs, post jobs, and post a resume for potential
 employer doges to find.
 
-[doge]: ./assets/images/doge.jpg
+[doge]: .app/assets/images/doge.jpg
 ## Technologies used
 Indoge is built on a Ruby on Rails server backend and a Backbone.js front end.
 Backbone allows for a 100% single page app experience with fast navigation and
