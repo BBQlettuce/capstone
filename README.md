@@ -13,14 +13,11 @@ Registered users can
 - [x] Set privacy settings on resumes
 - [x] Save jobs
 - [x] Post jobs
-- [ ] Tag jobs to facilitate searches
 
 All users can:
-- [ ] Search for openings based on keywords and locations
-  - [x] Can search using keywords
+- [x] Search for openings based on keywords
 - [x] Filter searches based on requirements/compensation/other attributes
-- [ ] Search for resumes using keywords and locations
-  - [x] Can search using text
+- [x] Search for resumes using keywords
 
 ## Design Docs
 * [View Wireframes][views]
@@ -95,6 +92,7 @@ date.
 [Details][phase-seven]
 
 ### Bonus Features (TBD)
+- [ ] Extend search (job and resume) to use location
 - [ ] Let dogs save search query settings
 - [ ] Owner ratings/reviews
 - [ ] Directly apply to jobs from page
