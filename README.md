@@ -22,3 +22,7 @@ Signup and login via Twitter is supported by Omniauth integration.
 
 Resume uploads are handled by Paperclip, with storage capabilities supported by
 Amazon Web Services.
+
+## TODOS
+* Extend search to use locations
+* Implement JobTags for search bar snazziness
