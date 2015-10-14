@@ -32,7 +32,7 @@ Indoge.Views.JobForm = Backbone.View.extend({
         Backbone.history.navigate("hire", {trigger: true});
       }.bind(this),
       error: function() {
-        console.log("invalid job");
+        alert("must have title and description");
       }
     })
   }
