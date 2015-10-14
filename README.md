@@ -24,5 +24,8 @@ Resume uploads are handled by Paperclip, with storage capabilities supported by
 Amazon Web Services.
 
 ## TODOS
+* Allow for users to tag jobs during job creation
+* Let tags pop up when searching for search bar snazziness
+  - [ ] results appear in list below the search bar
+  - [ ] clicking the list item fills in the bar with what you clicked
 * Extend search to use locations
-* Implement JobTags for search bar snazziness
