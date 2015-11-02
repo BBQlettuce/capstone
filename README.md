@@ -29,3 +29,6 @@ Amazon Web Services.
   - [ ] results appear in list below the search bar
   - [ ] clicking the list item fills in the bar with what you clicked
 * Extend search to use locations
+
+## TOFIX
+* resumes always display latest update
