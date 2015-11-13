@@ -34,7 +34,7 @@ Indoge.Views.JobMiniShow = Backbone.View.extend({
     } else if (msAgo <= 172800000){
       return "1 day ago";
     } else {
-      return (Math.floor(msAgo/86400000)) + "days ago";
+      return (Math.floor(msAgo/86400000)) + " days ago";
     }
   },
 

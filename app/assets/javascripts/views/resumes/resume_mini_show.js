@@ -14,8 +14,8 @@ Indoge.Views.ResumeMiniShow = Backbone.View.extend({
   },
 
   lastUpdated: function() {
-    var time = Date(this.model.get("updated_at"));
-    return "Updated: " + time.slice(4, 15);
+    var time = new Date(this.model.get("updated_at"));
+    return "Updated: " + time.toString().slice(4, 15);
   }
 
 })
